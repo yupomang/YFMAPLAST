@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<tr_code>A020102</tr_code>
+			<corp_no></corp_no>
+			<req_no></req_no>
+			<serial_no></serial_no>
+			<ans_no>[@setVariable,centerSeqno,30,0,0@]</ans_no>
+			<next_no></next_no>
+			<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+			<tr_time>[@setVariable,sendTime,8,0,0@]</tr_time>
+			<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+			<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+			<particular_code></particular_code>
+			<particular_info></particular_info>
+			<atom_tr_count></atom_tr_count>
+			<reserved></reserved>
+	</head>
+	<body>		
+		<ceridnum>[@setVariable,isloanflag,18,0,0@]</ceridnum>
+		<accname>[@setVariable,accinstname,40,0,0@]</accname>
+		<record_num></record_num>
+		<pageNo></pageNo>
+		<pageCount>[@setVariable,pageCount,18,0,0@]</pageCount>
+		<rowCount></rowCount>
+		<page_num></page_num>
+   		<detail details="10">
+   			<transdate>[@setVariable,0,20,0,0@]</transdate>
+			<unitaccname>[@setVariable,1,40,0,0@]</unitaccname>
+			<unitaccnum>[@setVariable,2,12,0,0@]</unitaccnum>
+			<busitype>[@setVariable,3,20,0,0@]</busitype>
+   			<dcflag>[@setVariable,4,20,0,0@]</dcflag>
+			<transmon>[@setVariable,5,100,0,0@]</transmon>
+			<balance>[@setVariable,6,18,0,0@]</balance>
+			<gettype>[@setVariable,7,18,0,0@]</gettype>
+			<summary></summary>
+			<Paybegindate>[@setVariable,8,18,0,0@]</Paybegindate>
+			<Payenddate>[@setVariable,9,18,0,0@]</Payenddate>
+		</detail>
+		<seq></seq>
+	</body>
+</root>

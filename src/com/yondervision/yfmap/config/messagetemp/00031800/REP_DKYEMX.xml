@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<root>
+		<head>
+			<tr_code>700005</tr_code>
+			<corp_no>00000001</corp_no>
+			<req_no>10000000001</req_no>			
+			<serial_no>1</serial_no>
+			<ans_no>1</ans_no>
+			<next_no>1</next_no>
+			<tr_acdt>1</tr_acdt>
+			<tr_time>1</tr_time>
+			<ans_code>[@setVariable,recode,10,0,0@]</ans_code>
+			<ans_info>[@setVariable,msg,200,0,0@]</ans_info>
+			<particular_code>1</particular_code>
+			<atom_tr_count></atom_tr_count>
+			<reserved>1</reserved>
+			<particular_info>1</particular_info>
+		</head>
+		<body>
+			<pageno></pageno>
+			<pagecount></pagecount>			
+			<detail details="5">
+				<transdate>[@setVariable,0,10,0,0@]</transdate>
+				<repayprin>[@setVariable,1,20,0,0@]</repayprin>
+				<repayint>[@setVariable,2,20,0,0@]</repayint>
+				<repaypun>[@setVariable,3,20,0,0@]</repaypun>
+				<loanbal>[@setVariable,4,20,0,0@]</loanbal>				
+			</detail>
+		</body>
+	</root>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<mi>
+		<head>	
+			<transCode>appapi001</transCode>
+			<sendDate>2013-10-21</sendDate>		
+			<sendTime>11:11:11</sendTime>
+			<sendSeqno>123</sendSeqno>
+			<key>1</key>
+			<centerSeqno>1111</centerSeqno>
+			<recode>000000</recode>
+			<msg>chenggong</msg>
+		</head>
+		<body>
+			<filename>123456.txt</filename>
+			<count>10</count>
+			<nextpage>0</nextpage>					
+			<freeuse1>1</freeuse1>
+			<freeuse2>1</freeuse2>
+			<freeuse3>1</freeuse3>
+		</body>
+	</mi>			

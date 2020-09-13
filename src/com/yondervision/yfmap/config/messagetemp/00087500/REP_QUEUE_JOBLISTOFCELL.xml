@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArrayOfCellWaitModel xmlns="http://linker.com.cn/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CellWaitModel>
+	<CellID>[@setVariable,recode,2,0,0@]</CellID>
+	<JobID>[@setVariable,recode,2,0,0@]</JobID>
+	<JobName>[@setVariable,recode,2,0,0@]</JobName>
+	<Result>[@setVariable,recode,2,0,0@]</Result>
+	<WaitCount>[@setVariable,recode,2,0,0@]</WaitCount>
+	<BookingTag>0</BookingTag>
+	</CellWaitModel>
+</ArrayOfCellWaitModel>

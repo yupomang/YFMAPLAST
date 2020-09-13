@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${dataSource.driverClassName}" />
+		<property name="url" value="${dataSource.url}" />
+		<property name="username" value="${dataSource.username}" />
+		<property name="password" value="${dataSource.password}" />
+	</bean>
+	
+	<!-- WAS数据源
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean" autowire="no">
+        <property name="jndiName">
+            <value>/jdbc/mi</value>
+        </property>
+    </bean>-->
+	
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	 <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource">
+            <ref local="dataSource" />
+        </property>
+    </bean>
+    
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    
+     <bean id="ghDwxxDao" class="com.yondervision.yfmap.dao.impl.GjDwxxDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	 <bean id="gjDwzhDAO" class="com.yondervision.yfmap.dao.impl.GjDwzhDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="gjGtdwyjcDAO" class="com.yondervision.yfmap.dao.impl.GjGtdwyjcDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="gjDwzhmxDAO" class="com.yondervision.yfmap.dao.impl.GjDwzhmxDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="gjDwndjsDAO" class="com.yondervision.yfmap.dao.impl.GjDwndjsDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="daGrjbDAO" class="com.yondervision.yfmap.dao.impl.DaGrjbDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="gjGrzhDAO" class="com.yondervision.yfmap.dao.impl.GjGrzhDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="gjGrmxDAO" class="com.yondervision.yfmap.dao.impl.GjGrmxDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="xdSpxxDAO" class="com.yondervision.yfmap.dao.impl.XdSpxxDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	 
+	<bean id="mi125Dao" class="com.yondervision.yfmap.dao.impl.Mi125DAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	
+	<bean id="mi126Dao" class="com.yondervision.yfmap.dao.impl.Mi126DAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	 
+	<bean id="mi008Dao" class="com.yondervision.yfmap.dao.impl.Mi008DAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="cmi008Dao" class="com.yondervision.yfmap.dao.impl.CMi008DAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean> 
+</beans>

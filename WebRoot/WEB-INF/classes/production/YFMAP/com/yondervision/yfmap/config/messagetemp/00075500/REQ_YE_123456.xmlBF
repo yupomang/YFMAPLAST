@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<mi>
+		<head>	
+			<transCode>appapi001</transCode>
+			<sendDate>1111</sendDate>		
+			<sendTime>1111</sendTime>
+			<sendSeqno>1111</sendSeqno>
+			<key>1111</key>
+			<buzType>1111</buzType>
+		</head>
+		<body>
+			<type>1111</type>
+			<accnum>1111</accnum>
+			<certinum>1111</certinum>
+			<freeuse1>1111</freeuse1>
+			<freeuse2>1111</freeuse2>
+			<freeuse3>1111</freeuse3>
+		</body>
+	</mi>			

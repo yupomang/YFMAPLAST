@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<tr_code>110091</tr_code>
+		<sendDate>[@getVariable,sendDate,10,0,0@]</sendDate>
+		<sendTime>[@getVariable,sendTime,8,0,0@]</sendTime>
+		<sendSeqno>[@getVariable,sendSeqno,50,0,0@]</sendSeqno>
+		<key>[@getVariable,key,8,0,0@]</key>
+		<buzType>5000</buzType>		
+	</head>
+	<body>
+   		<tranflag>1</tranflag>
+   		<linkphone>[@setVariable,mobileNumber,50,0,0@]</linkphone>
+   		<accnum></accnum>
+   		<busname>绑定微信</busname>
+   		<certinum>[@setVariable,certinum,50,0,0@]</certinum>
+	</body>
+</root>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<mi>
+		<head>
+			<transCode>[@getVariable,transCode,30,0,0@]</transCode>
+			<recvDate>[@getVariable,sendDate,30,0,0@]</recvDate>		
+			<recvTime>[@getVariable,sendSeqno,30,0,0@]</recvTime>
+			<sendSeqno>[@getVariable,sendSeqno,30,0,0@]</sendSeqno>
+			<key>1</key>
+			<miSeqno>[@getVariable,miSeqno,30,0,0@]</miSeqno>
+			<recode>[@getVariable,recode,30,0,0@]</recode>
+			<msg>[@getVariable,msg,100,0,0@]</msg>
+		</head>		
+	</mi>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding = "gb2312"?>
+<root>
+<head>		
+<tr_code>B00004</tr_code>
+<corp_no>1001</corp_no>
+<req_no>[@getVariable,sendSeqno,50,0,0@]</req_no>
+<serial_no>1</serial_no>
+<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+<atom_tr_count>1</atom_tr_count>
+<channel>1</channel>
+</head>
+<body>
+<projectname>[@getVariable,selectValue,80,0,0@]</projectname>
+<pageNo>[@getVariable,pagenum,40,0,0@]</pageNo>
+<pageSize>[@getVariable,pagerows,40,0,0@]</pageSize>
+</body>
+</root>

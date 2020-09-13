@@ -1,0 +1,23 @@
+<AuthCode1>6666</>
+<AuthCode2>6666</>
+<AuthCode3>6666</>
+<AuthFlag></>
+<BrcCode>00000470</>
+<BusiSeq>6184</>
+<ChannelSeq>695491</>
+<ChkCode>6666</>
+<FinancialDate>2016-07-01</>
+<HostBank></>
+<MTimeStamp>2016-11-15 12:21:46</>
+<NoteMsg></>
+<RspCode>[@setVariable,recode,10,0,0@]</>
+<RspMsg>[@setVariable,msg,100,0,0@]</>
+<STimeStamp>2016-11-15 12:21:46</>
+<SubBank></>
+<TellCode>6666</>
+<TranChannel>21</>
+<TranCode>142818</>
+<TranDate>2016-07-01</>
+<TranIP>18.16.2.9</>
+<TranSeq>6184</>
+<applyno>[@getVariable,matname,100,0,0@]</>

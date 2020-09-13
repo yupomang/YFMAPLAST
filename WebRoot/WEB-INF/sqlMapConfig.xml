@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE sqlMapConfig   
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"  
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/da_grjb_SqlMap.xml" /> 
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/gj_dwndjs_SqlMap.xml" />
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/gj_dwxx_SqlMap.xml" /> 
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/gj_dwzh_SqlMap.xml" /> 
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/gj_dwzhmx_SqlMap.xml" /> 
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/gj_grmx_SqlMap.xml" /> 
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/gj_grzh_SqlMap.xml" /> 
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/gj_gtdwyjc_SqlMap.xml" />  
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/xd_spxx_SqlMap.xml" />  
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/MI125_SqlMap.xml" />
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/MI126_SqlMap.xml" />	
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/MI008_SqlMap.xml" />
+	<sqlMap resource="com/yondervision/yfmap/dao/impl/sqlMap/CMI008_SqlMap.xml" />
+</sqlMapConfig>

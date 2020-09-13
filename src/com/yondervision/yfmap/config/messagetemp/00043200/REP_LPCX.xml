@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding = "gb2312"?>
+	<root>
+		<head>
+			<tr_code>B00004</tr_code>
+			<corp_no>1001</corp_no>
+			<req_no>1</req_no>
+			<serial_no>1</serial_no>
+			<ans_no></ans_no>
+			<next_no></next_no>
+			<tr_acdt></tr_acdt>
+			<tr_time></tr_time>
+			<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+			<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+			<particular_code></particular_code>
+			<atom_tr_count>1</atom_tr_count>
+			<reserved></reserved>
+			<particular_info></particular_info>
+		</head>
+		<body>
+		<rowCount></rowCount><pageCount></pageCount><record_num></record_num><pageNo></pageNo><pageSize></pageSize>
+			<detail details="3">
+				<projectname>[@setVariable,0,100,0,0@]</projectname>
+				<empunitname>[@setVariable,1,100,0,0@]</empunitname>
+				<polenum>[@setVariable,2,100,0,0@]</polenum>
+			</detail>
+		</body>
+	</root>	

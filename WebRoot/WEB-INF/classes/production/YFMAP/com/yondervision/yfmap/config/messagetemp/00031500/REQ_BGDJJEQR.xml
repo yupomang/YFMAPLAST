@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>0</reqflag>
+		<msgtype>84</msgtype>
+		<tr_code>X00014</tr_code>
+		<corp_no>[@getVariable,brcCode,100,0,0@]</corp_no>
+		<user_no>[@getVariable,tellCode,100,0,0@]</user_no>
+		<req_no>[@getVariable,sendSeqno,100,0,0@]</req_no>
+		<oreq_no></oreq_no>
+		<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+		<channel>[@getVariable,channel,8,0,0@]</channel>
+		<sign>28</sign>
+		<key>1</key>
+		<reserved>1</reserved>			
+	</head>
+	<body>
+		<gjjzh>[@getVariable,surplusAccount,50,0,0@]</gjjzh>
+		<loancontrnum>[@getVariable,loancontrnum,50,0,0@]</loancontrnum>
+		<tqhkfs>[@getVariable,repaymentStatus,50,0,0@]</tqhkfs>
+		<hkje>[@getVariable,repayment,50,0,0@]</hkje>
+		<type>[@getVariable,channel,8,0,0@]</type>
+		<cardno>[@getVariable,cardno,50,0,0@]</cardno>
+		<psword>[@getVariable,pwd,16,0,0@]</psword>
+	</body>
+</root>

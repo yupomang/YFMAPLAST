@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<mi>
+		<head>	
+			<transCode>appapi001</transCode>
+			<sendDate>[@setVariable,sendDate,10,0,0@]</sendDate>		
+			<sendTime>[@setVariable,sendTime,10,0,0@]</sendTime>
+			<sendSeqno>[@setVariable,sendSeqno,30,0,0@]</sendSeqno>
+			<key>[@setVariable,key,8,0,0@]</key>
+			<centerSeqno>[@setVariable,centerSeqno,4,0,0@]</centerSeqno>
+			<recode>[@setVariable,recode,6,0,0@]</recode>
+			<msg>[@setVariable,msg,100,0,0@]</msg>
+		</head>
+		<body>
+			<accnum>[@setVariable,accnum,30,0,0@]</accnum>
+			<accname>[@setVariable,accname,40,0,0@]</accname>
+			<intdate>[@setVariable,intdate,10,0,0@]</intdate>
+			<keepamt>[@setVariable,keepamt,18,0,0@]</keepamt>
+			<incramt>[@setVariable,incramt,18,0,0@]</incramt>			
+			<drawamt>[@setVariable,drawamt,18,0,0@]</drawamt>			
+			<intamt>[@setVariable,intamt,18,0,0@]</intamt>
+			<bal>[@setVariable,bal,18,0,0@]</bal>
+			<tips>[@setVariable,tips,200,0,0@]</tips>					
+			<freeuse1>[@setVariable,loanaccnum,30,0,0@]</freeuse1>
+			<freeuse2>[@setVariable,loanaccnum,30,0,0@]</freeuse2>
+			<freeuse3>[@setVariable,loanaccnum,30,0,0@]</freeuse3>
+		</body>
+	</mi>			

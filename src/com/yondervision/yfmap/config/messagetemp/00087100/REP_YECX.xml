@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<tr_code>A020101</tr_code>
+			<corp_no></corp_no>
+			<req_no></req_no>
+			<serial_no></serial_no>
+			<ans_no>[@setVariable,centerSeqno,30,0,0@]</ans_no>
+			<next_no></next_no>
+			<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+			<tr_time>[@setVariable,sendTime,8,0,0@]</tr_time>
+			<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+			<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+			<particular_code></particular_code>
+			<particular_info></particular_info>
+			<atom_tr_count></atom_tr_count>
+			<reserved></reserved>
+	</head>
+	<body>		
+		<accnum>[@setVariable,surplusAccount,12,0,0@]</accnum>
+			<accname>[@setVariable,accname,40,0,0@]</accname>
+			<birthday>[@setVariable,birthday,10,0,0@]</birthday>
+			<ceridnum>[@setVariable,ceridnum,20,0,0@]</ceridnum>
+			<basenumber>[@setVariable,paymentBase,18,0,0@]</basenumber>
+			<totalunitprop>[@setVariable,companyPaymentRate,18,0,0@]</totalunitprop>
+			<totalperprop>[@setVariable,personalPaymentRate,18,0,0@]</totalperprop>
+			<totalprop>[@setVariable,totalprop,18,0,0@]</totalprop>
+			<monpaysum>[@setVariable,monpaysum,18,0,0@]</monpaysum>
+			<balance>[@setVariable,accountBalance,18,0,0@]</balance>
+			<lastybal>[@setVariable,carryoverAmount,18,0,0@]</lastybal>
+			<ydayamt>[@setVariable,ydayamt,18,0,0@]</ydayamt>
+			<ydrawamt>[@setVariable,ydrawamt,18,0,0@]</ydrawamt>
+			<ypatchamt>[@setVariable,ypatchamt,18,0,0@]</ypatchamt>
+			<peraccstate>[@setVariable,accountStatus,20,0,0@]</peraccstate>
+			<opendate>[@setVariable,accountOpenDate,10,0,0@]</opendate>	
+			<lastpay>[@setVariable,lastestPaymentDate,10,0,0@]</lastpay>
+			<unitaccnum>[@setVariable,companyAccount,80,0,0@]</unitaccnum>
+			<unitaccname>[@setVariable,companyName,80,0,0@]</unitaccname>
+			<instcode>[@setVariable,accountOrganization,20,0,0@]</instcode>
+	</body>
+</root>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<CMS>
+		<eb>
+			<pub>
+				<TransCode>交易代码</TransCode>	
+				<CIS>集团CIS号</CIS>			
+				<BankCode>归属银行编号</BankCode>
+				<ID>证书ID</ID>	
+				<TranDate>[@getVariable,buzType,100,0,0@]</TranDate>
+				<TranTime>[@getVariable,centerId,100,0,0@]</TranTime>
+				<fSeqno>[@getVariable,currenVersion,100,0,0@]</fSeqno>
+			</pub>
+			<in>
+			<QryfSeqno>[@getVariable,deviceToken,100,0,0@]</QryfSeqno>
+			<ReqReserved1>请求备用字段1</ReqReserved1>
+			<ReqReserved2>请求备用字段2</ReqReserved2>			
+			</in>
+		</eb>
+	</CMS>

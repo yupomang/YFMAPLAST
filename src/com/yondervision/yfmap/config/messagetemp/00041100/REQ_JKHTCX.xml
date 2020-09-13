@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<mi>
+		<head>	
+			<transCode>33000002</transCode>
+			<sendDate>[@getVariable,sendDate,10,0,0@]</sendDate>
+			<sendTime>[@getVariable,sendTime,8,0,0@]</sendTime>
+			<sendSeqno>[@getVariable,sendSeqno,100,0,0@]</sendSeqno>
+			<key>1</key>
+			<buzType>appapi00604</buzType>
+			<corp_no>00041303</corp_no>
+			<user_no>A301</user_no>
+			<channel>61</channel>
+			<KeyInformation>[@getVariable,surplusAccount,50,0,0@]</KeyInformation>
+		</head>
+		<body>
+			<yxsjls>9999</yxsjls>
+			<ys>1</ys>
+			<lmkkh>[@getVariable,surplusAccount,50,0,0@]</lmkkh>				
+		</body>
+	</mi>			

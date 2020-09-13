@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<root>
+		<head>	
+			<transCode>158002</transCode>
+			<recvDate>[@setVariable,sendDate,10,0,0@]</recvDate>		
+			<recvTime>[@setVariable,sendTime,8,0,0@]</recvTime>
+			<sendSeqno>[@setVariable,sendSeqno,50,0,0@]</sendSeqno>
+			<key>[@setVariable,key,8,0,0@]</key>
+			<centerSeqno>[@setVariable,centerSeqno,30,0,0@]</centerSeqno>
+			<recode>[@setVariable,recode,6,0,0@]</recode>
+			<msg>[@setVariable,msg,100,0,0@]</msg>
+		</head>
+		<body>
+			<detail details="3">
+				<transdate>[@setVariable,0,10,0,0@]</transdate>
+				<drawreason>[@setVariable,1,255,0,0@]</drawreason>
+				<drawamt>[@setVariable,2,20,0,0@]</drawamt>
+				<freeuse1></freeuse1>
+				<freeuse2>0.00</freeuse2>
+				<freeuse3></freeuse3>
+			</detail>
+		</body>
+	</root>			

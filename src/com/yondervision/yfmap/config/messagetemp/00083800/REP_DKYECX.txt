@@ -1,0 +1,37 @@
+<AuthCode1>IVR0</>
+<AuthCode2>IVR0</>
+<AuthCode3>IVR0</>
+<AuthFlag>0</>
+<BrcCode>00000000</>
+<BusiSeq>90</>
+<ChannelSeq>398243</>
+<ChkCode>cweb</>
+<MTimeStamp>2013-07-24 09:55:28:967000</>
+<NoteMsg></>
+<RspCode>[@setVariable,recode,10,0,0@]</>
+<RspMsg>[@setVariable,msg,100,0,0@]</>
+<STimeStamp>2013-07-24 09:55:28:966000</>
+<TellCode>cweb</>
+<TranChannel>00</>
+<TranCode>430010</>
+<TranDate>2014-12-11</>
+<TranIP>10.22.21.26</>
+<TranSeq>90</>
+<loancontrnum>[@setVariable,loanaccnum,12,0,0@]</>
+<loaneename>[@setVariable,loanaccname,40,0,0@]</>
+<certinum>[@setVariable,idcardNumber,20,0,0@]</>
+<loandate>[@setVariable,loandate,10,0,0@]</>
+<loanterm>[@setVariable,retterms,8,0,0@]</>
+<bankname>[@setVariable,repaybank,128,0,0@]</>
+<repaymode>[@setVariable,freeuse1,20,0,0@]</>
+<loanrate>[@setVariable,loanrate,8,0,0@]</>
+<days>[@setVariable,repaydate,8,0,0@]</>
+<amt>[@setVariable,loanamt,18,0,0@]</>
+<loanbal>[@setVariable,loanbal,18,0,0@]</>
+<oweprin>[@setVariable,overdueamt,18,0,0@]</>
+<owecnt>[@setVariable,overdueterms,8,0,0@]</>
+<oweint>[@setVariable,retint,18,0,0@]</>
+<pun>[@setVariable,retprin,18,0,0@]</>
+<bankaccnm>[@setVariable,bankaccnm,30,0,0@]</>
+<bankaccnum>[@setVariable,bankaccnum,30,0,0@]</>
+<remark></>

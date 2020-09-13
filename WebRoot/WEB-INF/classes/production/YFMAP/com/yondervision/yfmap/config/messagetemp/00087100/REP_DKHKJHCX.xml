@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<tr_code>A020305a</tr_code>
+			<corp_no></corp_no>
+			<req_no></req_no>
+			<serial_no></serial_no>
+			<ans_no>[@setVariable,centerSeqno,30,0,0@]</ans_no>
+			<next_no></next_no>
+			<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+			<tr_time>[@setVariable,sendTime,8,0,0@]</tr_time>
+			<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+			<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+			<particular_code></particular_code>
+			<particular_info></particular_info>
+			<atom_tr_count></atom_tr_count>
+			<reserved></reserved>
+	</head>
+	<body>
+		<record_num></record_num>
+		<pageNo></pageNo>
+		<pageCount>[@setVariable,pageCount,18,0,0@]</pageCount>
+		<rowCount></rowCount>
+		<beginintdate>[@setVariable,beginintdate,10,0,0@]</beginintdate>
+		<endintdate>[@setVariable,endintdate,10,0,0@]</endintdate>
+		<deductintacc>[@setVariable,deductintacc,31,0,0@]</deductintacc>
+		<retloanmode>[@setVariable,retloanmode,21,0,0@]</retloanmode>
+		<retloancycle>[@setVariable,retloancycle,21,0,0@]</retloancycle>
+		<loansum>[@setVariable,loansum,18,0,0@]</loansum>
+		<loanterm>[@setVariable,loanterm,10,0,0@]</loanterm>
+		<rate>[@setVariable,rate,18,0,0@]</rate>
+		<planretsum_z>[@setVariable,planretsum_z,18,0,0@]</planretsum_z>
+		<planretprin_z>[@setVariable,planretprin_z,18,0,0@]</planretprin_z>
+		<planretint_z>[@setVariable,planretint_z,18,0,0@]</planretint_z>
+   		<detail details="5">
+   			<seqnum></seqnum>
+			<plandate>[@setVariable,0,40,0,0@]</plandate>
+			<planretprin>[@setVariable,1,18,0,0@]</planretprin>
+			<planretint>[@setVariable,2,18,0,0@]</planretint>
+   			<planretsum>[@setVariable,3,18,0,0@]</planretsum>
+		</detail>
+		<seq></seq>
+	</body>
+</root>

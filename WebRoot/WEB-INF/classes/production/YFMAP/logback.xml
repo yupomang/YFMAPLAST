@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+   <!-- 
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %p, %c, %t, %r, %ex, %F, %L, %C{1}, %M : %m%n</pattern>
+        </layout>
+    </appender>
+	 -->
+   
+    <appender name="FILE" class="ch.qos.logback.classic.sift.SiftingAppender">
+        <discriminator>
+            <Key>fileName</Key>
+            <DefaultValue>YDHLXT</DefaultValue>            
+        </discriminator>
+        
+        <sift>
+            <appender name="appendername" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <File>${fileName}.log</File>
+                <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                    <FileNamePattern>
+                       ${fileName}_%d{yyyy-MM-dd}_%d{HHmmss}-%i.log
+                    </FileNamePattern>
+                    <MaxHistory>2</MaxHistory>
+                    <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                        <MaxFileSize>10MB</MaxFileSize>
+                    </TimeBasedFileNamingAndTriggeringPolicy>
+                </rollingPolicy>
+                <encoder>
+                    <pattern>
+                       %msg %n
+                    </pattern>
+                    <immediateFlush>true</immediateFlush><!-- 可以提高日志吞吐量  -->
+					<outputPatternAsHeader>true</outputPatternAsHeader>
+                </encoder>
+            </appender>
+        </sift>
+    </appender>
+    <!-- 
+    <appender name="FILE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <OnMismatch>DENY</OnMismatch>
+            <OnMatch>ACCEPT</OnMatch>
+        </filter>
+        <File>log/logback-err.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>log/sshd-err.log.%i.bak</FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>3</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>5MB</MaxFileSize>
+        </triggeringPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss}, %p, %c, %t, %r, %ex, %F, %L, %C{1}, %M %m%n</Pattern>
+        </layout>
+    </appender>
+     -->
+    <root level="ALL">
+        <!-- <appender-ref ref="STDOUT"/> -->
+        <appender-ref ref="FILE"/>
+        <!-- <appender-ref ref="FILE-ERROR"/> -->
+    </root>
+</configuration>

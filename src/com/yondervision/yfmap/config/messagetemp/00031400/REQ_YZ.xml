@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>
+		<reqflag>0</reqflag>
+		<msgtype>71</msgtype>
+		<tr_code>X00001</tr_code>
+		<corp_no>00031400</corp_no>
+		<user_no>8888</user_no>
+		<req_no>[@getVariable,sendSeqno,100,0,0@]</req_no>
+		<oreq_no></oreq_no>
+		<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+		<channel>[@getVariable,channel,2,0,0@]</channel>
+		<sign>28</sign>
+		<key>1</key>
+		<reserved>1</reserved>			
+	</head>
+	<body>
+		<gjjzh>[@getVariable,surplusAccount,50,0,0@]</gjjzh>
+		<xm>[@getVariable,fullName,50,0,0@]</xm>
+		<zjhm>[@getVariable,idcardNumber,50,0,0@]</zjhm>
+	</body>
+</root>

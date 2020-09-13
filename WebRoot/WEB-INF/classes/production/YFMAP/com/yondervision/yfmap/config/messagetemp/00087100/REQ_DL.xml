@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<root>
+		<head>
+			<tr_code>A030106</tr_code>
+			<corp_no></corp_no>
+			<user_no></user_no>
+			<serial_no></serial_no>
+			<req_no></req_no>
+			<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+			<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+			<atom_tr_count></atom_tr_count>
+			<channel>5000</channel>
+			<sign>5000</sign>
+			<filename></filename>
+			<ogl_serial_no></ogl_serial_no>
+			<key ></key >
+			<reserved></reserved>
+		</head>
+		<body>
+			<accnum>[@getVariable,surplusAccount,12,0,0@]</accnum>
+			<certinum>[@getVariable,bodyCardNumber,20,0,0@]</certinum>
+			<transaccnum>[@getVariable,cardno,50,0,0@]</transaccnum>
+			<superbank></superbank>
+			<transaccname></transaccname>
+		</body>
+	</root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>
+		<tr_code>430405</tr_code>
+		<corp_no></corp_no>
+		<req_no></req_no>
+		<serial_no></serial_no>
+		<ans_no></ans_no>
+		<next_no></next_no>
+		<tr_acdt></tr_acdt>
+		<tr_time></tr_time>
+		<ans_code>[@setVariable,recode,2,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,80,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<atom_tr_count></atom_tr_count>
+		<reserved></reserved>
+		<particular_info></particular_info>
+	</head>
+	<body>
+		<loanbal>[@setVariable,loanbal,18,0,0@]</loanbal>
+		<loancontrnum>[@setVariable,loanaccnum,22,0,0@]</loancontrnum>
+		<loansum>[@setVariable,loanamt,18,0,0@]</loansum>
+		<loanrate>[@setVariable,loanrate,8,0,0@]</loanrate>
+		<freeuse1>[@setVariable,repaymode,40,0,0@]</freeuse1>
+		<freeuse7>[@setVariable,withholdstatus,40,0,0@]</freeuse7>
+		<amt1>[@setVariable,retint,18,0,0@]</amt1>
+	</body>
+</root>			

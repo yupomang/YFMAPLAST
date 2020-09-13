@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<root>
+		<head>	
+			<transCode>430011</transCode>
+			<recvDate>[@setVariable,sendDate,10,0,0@]</recvDate>		
+			<recvTime>[@setVariable,sendTime,8,0,0@]</recvTime>
+			<sendSeqno>[@setVariable,sendSeqno,50,0,0@]</sendSeqno>
+			<key>[@setVariable,key,8,0,0@]</key>
+			<centerSeqno>[@setVariable,centerSeqno,30,0,0@]</centerSeqno>
+			<recode>[@setVariable,recode,6,0,0@]</recode>
+			<msg>[@setVariable,msg,100,0,0@]</msg>
+		</head>
+		<body>
+			<loancontrnum>[@setVariable,0,12,0,0@]</loancontrnum>
+			<loaneename>[@setVariable,1,40,0,0@]</loaneename>
+			<detail details="7">
+				<repowecnt>[@setVariable,0,10,0,0@]</repowecnt>
+				<repaydate>[@setVariable,1,6,0,0@]</repaydate>
+				<repayday>[@setVariable,2,30,0,0@]</repayday>
+				<prin>[@setVariable,3,20,0,0@]</prin>
+				<int>[@setVariable,4,20,0,0@]</int>
+				<pun>[@setVariable,5,20,0,0@]</pun>
+				<total>[@setVariable,6,20,0,0@]</total>
+			</detail>
+		</body>
+	</root>			

@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="CMI001">
+	<resultMap class="java.util.HashMap" id="AppApi00101Map">
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="STATUS" jdbcType="VARCHAR" property="status" />
+		<result column="QCYE" jdbcType="VARCHAR" property="qcye" />
+		<result column="PERSONYEARMONTH" jdbcType="VARCHAR" property="personyearmonth" />
+		<result column="BASENUMBER" jdbcType="VARCHAR" property="basenumber" />
+		<result column="DEPOSIT_RATE1" jdbcType="VARCHAR" property="deposit_rate1" />
+		<result column="DEPOSIT_RATE2" jdbcType="VARCHAR" property="deposit_rate2" />
+		<result column="ACCOUNTNO" jdbcType="VARCHAR" property="accountno" />
+		<result column="CUSTNAME" jdbcType="VARCHAR" property="custname" />
+		<result column="VALUEDATE" jdbcType="VARCHAR" property="valuedate" />
+		<result column="PERSON_SUM" jdbcType="VARCHAR" property="person_sum" />
+		<result column="SMSSTATUS" jdbcType="VARCHAR" property="smsstatus" />
+	</resultMap>
+	<select id="selectAppapi00101" parameterClass="java.util.HashMap"
+		resultMap="AppApi00101Map">
+		select a.P_ACCOUNTNO , a.P_NAME ,b.STATUS ,
+		(select
+		nvl(sum(CREDIT_SUM),0)-nvl(sum(DEBIT_SUM),0)+nvl(sum(INTEREST_INCOME),0)-nvl(sum(INTEREST_SUM),0)
+		from dbuser.TGP_PERSON_DETAIL DTL where
+		DTL.PERSONACCOUNTID=b.PERSONACCOUNTID) qcye,
+		(select max(PERSONYEARMONTH) from dbuser.TGP_PERSON_DEPOSIT where
+		PERSONACCOUNTID=b.PERSONACCOUNTID) personyearmonth,
+		d.BASE_SALARY basenumber,
+		c.CUSTNAME custname,( select max(VALUEDATE) from dbuser.TGP_PERSON_DETAIL where
+		PERSONACCOUNTID=b.PERSONACCOUNTID) valuedate,
+		c.ACCOUNTNO accountno,
+		d.sum_all person_sum, d.PERSON_RATE deposit_rate1,d.CUST_RATE
+		deposit_rate2,(select STATUS from DBUSER.SMS_PERSON_INFO where
+		certinum=#bodyCardNumber:VARCHAR#) smsstatus
+		from dbuser.tgp_person a,dbuser.TGP_PERSONACCOUNT b,dbuser.TGP_CUST
+		c,dbuser.TGP_PERSON_CHG d
+		where a.personid=b.personid and a.PERSONAL_CARDNO=#bodyCardNumber:VARCHAR#
+		and a.CUSTID=c.CUSTID
+		and d.PERSONACCOUNTID=b.PERSONACCOUNTID
+		and d.YEARMONTH=(select max(YEARMONTH) from dbuser.TGP_PERSON_CHG where
+		PERSONACCOUNTID=b.PERSONACCOUNTID) and d.ISLASTYEARMONTH='1'
+		and b.STATUS='70007'
+	</select>
+	<resultMap class="java.util.HashMap" id="AppApi00201Map">
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="VALUEDATE" jdbcType="VARCHAR" property="valuedate" />
+		<result column="FSE" jdbcType="VARCHAR" property="fse" />
+		<result column="BUSINESS_TYPEID" jdbcType="VARCHAR" property="business_typeid" />
+		<result column="BAL" jdbcType="VARCHAR" property="bal" />
+	</resultMap>
+	<select id="selectAppapi00201" parameterClass="java.util.HashMap"
+		resultMap="AppApi00201Map">
+		select b.P_NAME ,b.P_ACCOUNTNO ,a.VALUEDATE ,
+		abs(nvl(a.CREDIT_SUM,0) -nvl(a.DEBIT_SUM,0)+nvl(a.INTEREST_INCOME,0)-nvl(a.INTEREST_SUM,0))
+		fse,
+		e.TYPENAME business_typeid,(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from dbuser.TGP_PERSON_DETAIL DTL, dbuser.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and <![CDATA[DTL.VALUEDATE<a.VALUEDATE]]>
+		)
+		+(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from dbuser.TGP_PERSON_DETAIL DTL, dbuser.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and DTL.VALUEDATE=a.VALUEDATE and <![CDATA[DTL.FUNDBUSINESS_ID<=a.FUNDBUSINESS_ID]]>
+		) bal
+		from dbuser.TGP_PERSON_DETAIL a,dbuser.TAP_FUNDBUSINESS
+		c,dbuser.TGP_PERSONACCOUNT d,dbuser.TGP_PERSON
+		b,dbuser.TAC_BUSINESSTYPE e
+		where a.FUNDBUSINESS_ID=c.FUNDBUSINESS_ID and
+		a.PERSONACCOUNTID=d.PERSONACCOUNTID
+		and b.PERSONID=d.PERSONID
+		and b.PERSONAL_CARDNO=#bodyCardNumber:VARCHAR#
+		and c.BUSINESS_TYPEID = e.BUSINESSTYPEID
+		 and a.VALUEDATE>=#startdate:VARCHAR# and <![CDATA[a.VALUEDATE<=#enddate:VARCHAR#]]> 
+		order by a.VALUEDATE desc
+	</select>
+	<resultMap class="java.util.HashMap" id="AppApi00601Map">
+		<result column="CONTRACTACCOUNTS" jdbcType="VARCHAR" property="contractaccounts" />
+		<result column="PERSONNAME" jdbcType="VARCHAR" property="personname" />
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="personal_cardno" />
+		<result column="BALANCE" jdbcType="VARCHAR" property="balance" />
+		<result column="BEGINDATE" jdbcType="VARCHAR" property="begindate" />
+		<result column="OVERDATE" jdbcType="VARCHAR" property="overdate" />
+		<result column="LOANSUM" jdbcType="VARCHAR" property="loansum" />
+		<result column="LOANTERM" jdbcType="VARCHAR" property="loanterm" />
+		<result column="MONTHRATE" jdbcType="VARCHAR" property="monthrate" />
+		<result column="ACCU_CAPITAL" jdbcType="VARCHAR" property="accu_capital" />
+		<result column="INTEREST" jdbcType="VARCHAR" property="interest" />
+		<result column="BANKID" jdbcType="VARCHAR" property="bankid" />
+		<result column="CALC_INTEREST_DATE" jdbcType="VARCHAR"
+			property="calc_interest_date" />
+	</resultMap>
+	<select id="selectAppapi00601" parameterClass="java.util.HashMap"
+		resultMap="AppApi00601Map">
+		select b.CONTRACTACCOUNTS ,a.PERSONNAME , a.PERSONAL_CARDNO ,b.BEGINDATE
+		,b.OVERDATE ,
+		b.LOANSUM ,b.LOANTERM ,b.MONTHRATE , (select sum(CAPITAL) from
+		DBUSER.TPL_LOANDETAIL where STATEID=a.STATEID) ACCU_CAPITAL,
+		(select sum(INTEREST) from DBUSER.TPL_LOANDETAIL where STATEID=a.STATEID )
+		INTEREST,c.BANKNAME bankid ,
+		(select max(CALC_INTEREST_DATE) from DBUSER.TPL_LOANDETAIL where
+		STATEID=a.STATEID) CALC_INTEREST_DATE,(b.LOANSUM-(select sum(coalesce(CAPITAL,0)) from DBUSER.TPL_LOANDETAIL g where g.STATEID=a.STATEID)) balance
+		from dbuser.TPL_BORROWERINFO a,dbuser.TPL_LOANCONTRACT b ,dbuser.TAC_BANK
+		c where
+		a.PERSONAL_CARDNO=#bodyCardNumber:VARCHAR# and b.CONTRACTACCOUNTS=#loanContrNum:VARCHAR# and
+		a.stateid=b.stateid and b.bankid=c.bankid
+	</select>
+	<resultMap class="java.util.HashMap" id="AppApi00701Map">
+		<result column="BUSINESSTYPEID" jdbcType="VARCHAR" property="businesstypeid" />
+		<result column="CALC_INTEREST_DATE" jdbcType="VARCHAR"
+			property="calc_interest_date" />
+		<result column="CAPITAL" jdbcType="VARCHAR" property="capital" />
+		<result column="INTEREST" jdbcType="VARCHAR" property="interest" />
+		<result column="PUNITIVEINTEREST" jdbcType="VARCHAR" property="punitiveinterest" />
+		<result column="SUMMARY" jdbcType="VARCHAR" property="summary" />
+	</resultMap>
+	<select id="selectAppapi00701" parameterClass="java.util.HashMap"
+		resultMap="AppApi00701Map">
+		select d.TYPENAME businesstypeid , a.CALC_INTEREST_DATE , a.capital ,
+		a.interest ,
+		a.punitiveinterest ,c.SUMMARY from dbuser.tpl_loandetail a
+		left join dbuser.TPL_BORROWERINFO b on (a.stateid=b.stateid)
+		left join
+		dbuser.TPL_LOANCONTRACT d on (d.stateid=b.stateid)
+		left join dbuser.TAP_FUNDBUSINESS c on (a.FUNDBUSINESS_ID=
+		c.FUNDBUSINESS_ID)
+		left join dbuser.TAC_BUSINESSTYPE d on
+		(a.BUSINESSTYPEID = d.BUSINESSTYPEID)
+		where
+		b.PERSONAL_CARDNO=#bodyCardNumber:VARCHAR#
+		and d.CONTRACTACCOUNTS=#loanContrNum:VARCHAR#
+		and
+		 a.CALC_INTEREST_DATE>=#startdate:VARCHAR#  and <![CDATA[a.CALC_INTEREST_DATE<=#enddate:VARCHAR#]]> 
+		order by a.CALC_INTEREST_DATE desc
+	</select>
+	
+	<resultMap class="java.util.HashMap" id="AppApi40103Map">
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="certinum" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="accname" />
+		<result column="MOBILE" jdbcType="VARCHAR" property="mobileNumber" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="accnum" />
+	</resultMap>
+	<select id="selectAppapi40103" parameterClass="java.util.HashMap"  resultMap="AppApi40103Map">
+			select a.PERSONAL_CARDNO,a.P_NAME,a.MOBILE,a.P_ACCOUNTNO from dbuser.TGP_PERSON a,dbuser.TGP_PERSONACCOUNT b where a.PERSONID = b.PERSONID and b.STATUS='70007' 
+			<isNotEmpty prepend="AND" property="idcardNumber">
+            <![CDATA[ a.PERSONAL_CARDNO=#idcardNumber:VARCHAR# ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="fullName">
+            <![CDATA[ a.P_NAME=#fullName:VARCHAR# ]]>
+			</isNotEmpty>
+	</select>
+	
+	<resultMap class="java.util.HashMap" id="AppApi40102Map">
+		<result column="CERTINUM" jdbcType="VARCHAR" property="certinum" />
+		<result column="ACCNUM" jdbcType="VARCHAR" property="accnum" />
+		<result column="ACCNAME" jdbcType="VARCHAR" property="accname" />
+		<result column="HANDSET" jdbcType="VARCHAR" property="handset" />
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="STATUS" jdbcType="VARCHAR" property="status" />
+		<result column="APP_FLAG" jdbcType="VARCHAR" property="app_flag" />
+		<result column="WX_FLAG" jdbcType="VARCHAR" property="wx_flag" />
+	</resultMap>
+	<select id="selectAppapi40102" parameterClass="java.util.HashMap"
+		resultMap="AppApi40102Map">
+		select
+		CERTINUM,ACCNUM,ACCNAME,HANDSET,PHONENUMBER,STATUS,APP_FLAG,WX_FLAG
+		from dbuser.SMS_PERSON_INFO
+		<dynamic prepend="where">
+			<isNotEmpty prepend="AND" property="idcardNumber">
+            <![CDATA[ CERTINUM=#idcardNumber:VARCHAR# ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="fullName">
+            <![CDATA[ ACCNAME=#fullName:VARCHAR# ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="mobileNumber">
+            <![CDATA[ PHONENUMBER=#mobileNumber:VARCHAR# ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="status">
+            <![CDATA[ STATUS=#status:VARCHAR# ]]>
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	<resultMap class="java.util.HashMap" id="AppApiFlagMap">
+		<result column="CERTINUM" jdbcType="VARCHAR" property="certinum" />
+		<result column="ACCNUM" jdbcType="VARCHAR" property="accnum" />
+		<result column="ACCNAME" jdbcType="VARCHAR" property="accname" />
+		<result column="HANDSET" jdbcType="VARCHAR" property="handset" />
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="STATUS" jdbcType="VARCHAR" property="status" />
+		<result column="APP_FLAG" jdbcType="VARCHAR" property="app_flag" />
+		<result column="WX_FLAG" jdbcType="VARCHAR" property="wx_flag" />
+	</resultMap>
+	<select id="selectAppapiFlag" parameterClass="java.util.HashMap"
+		resultMap="AppApiFlagMap">
+		select
+		CERTINUM,ACCNUM,ACCNAME,HANDSET,PHONENUMBER,STATUS,APP_FLAG,WX_FLAG
+		from dbuser.SMS_PERSON_INFO
+		where app_flag='1' or wx_flag='1'
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiZhyeMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="CUSTNAME" jdbcType="VARCHAR" property="custname" />
+		<result column="STATUS" jdbcType="VARCHAR" property="status" />
+		<result column="BAL" jdbcType="VARCHAR" property="bal" />
+		<result column="PERSON_SUM" jdbcType="VARCHAR" property="person_sum" />
+		<result column="PERSONYEARMONTH" jdbcType="VARCHAR" property="personyearmonth" />
+	</resultMap>
+	<select id="selectSmsZhye" parameterClass="java.util.HashMap"
+		resultMap="SmsApiZhyeMap">
+		select e.PHONENUMBER,a.P_ACCOUNTNO , a.P_NAME ,case when b.STATUS='70007' then '正常' else
+		'非正常' end STATUS,
+		(select
+		nvl(sum(CREDIT_SUM),0)-nvl(sum(DEBIT_SUM),0)+nvl(sum(INTEREST_INCOME),0)-nvl(sum(INTEREST_SUM),0)
+		from DBUSER.TGP_PERSON_DETAIL DTL where
+		DTL.PERSONACCOUNTID=b.PERSONACCOUNTID) bal,
+		(select max(PERSONYEARMONTH) from DBUSER.TGP_PERSON_DEPOSIT where
+		PERSONACCOUNTID=b.PERSONACCOUNTID) personyearmonth,
+		d.BASE_SALARY basenumber,
+		c.CUSTNAME custname,
+		d.sum_all person_sum, d.PERSON_RATE deposit_rate1,d.CUST_RATE deposit_rate2
+		from DBUSER.tgp_person a,DBUSER.TGP_PERSONACCOUNT b,DBUSER.TGP_CUST
+		c,DBUSER.TGP_PERSON_CHG d,DBUSER.SMS_PERSON_INFO e
+		where a.personid=b.personid 
+		and a.CUSTID=c.CUSTID
+		and d.PERSONACCOUNTID=b.PERSONACCOUNTID
+		and d.YEARMONTH=(select max(YEARMONTH) from DBUSER.TGP_PERSON_CHG where
+		PERSONACCOUNTID=b.PERSONACCOUNTID) and d.ISLASTYEARMONTH='1'
+		and b.STATUS='70007' and a.PERSONAL_CARDNO=e.CERTINUM and e.PHONENUMBER=#mobileNumber:VARCHAR# and e.STATUS='1'
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiJxxxMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="END_DATE" jdbcType="VARCHAR" property="end_date" />
+		<result column="INTEREST" jdbcType="VARCHAR" property="interest" />
+		<result column="THIS_YEAR_BALANCE" jdbcType="VARCHAR" property="this_year_balance" />
+	</resultMap>
+	<select id="selectSmsJxxx" parameterClass="java.util.HashMap"
+		resultMap="SmsApiJxxxMap">
+		select e.PHONENUMBER,a.P_NAME ,substr(a.END_DATE,1,10) END_DATE,(a.TERM_INTEREST+a.CURRENT_INTEREST)
+		INTEREST,a.THIS_YEAR_BALANCE from dbuser.TGP_YEAR_INT_PER a,dbuser.SMS_PERSON_INFO e 
+		where a.STATUS='70007'  and a.END_DATE=#enddate:VARCHAR# 
+		 and a.PERSONAL_CARDNO=e.CERTINUM 
+		 and e.PHONENUMBER=#mobileNumber:VARCHAR#  and e.STATUS='1' 
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiDkxxMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="PERSONNAME" jdbcType="VARCHAR" property="personname" />
+		<result column="PERSONNAME1" jdbcType="VARCHAR" property="personname1" />
+		<result column="CONTRACTACCOUNTS" jdbcType="VARCHAR" property="contractaccounts" />
+		<result column="LOANSUM" jdbcType="VARCHAR" property="loansum" />
+		<result column="LOANTERM" jdbcType="VARCHAR" property="loanterm" />
+		<result column="BALANCE" jdbcType="VARCHAR" property="balance" />
+		<result column="CDATE" jdbcType="VARCHAR" property="cdate" />
+	</resultMap>
+	<select id="selectSmsDkxx" parameterClass="java.util.HashMap"
+		resultMap="SmsApiDkxxMap">
+		select e.PHONENUMBER,a.PERSONNAME ,a.PERSONNAME PERSONNAME1,b.CONTRACTACCOUNTS ,b.LOANSUM
+		,int(b.LOANTERM/12) LOANTERM ,
+		(b.LOANSUM-(select
+		sum(coalesce(CAPITAL,0)) from dbuser.TPL_LOANDETAIL g where
+		g.STATEID=a.STATEID)) BALANCE ,
+		substr((select max(CALC_INTEREST_DATE) from
+		dbuser.TPL_LOANDETAIL where STATEID=a.STATEID),1,10) CDATE from
+		dbuser.TPL_BORROWERINFO a, dbuser.TPL_LOANCONTRACT b,dbuser.SMS_PERSON_INFO e where
+		a.STATEID=b.STATEID and a.PERSONAL_CARDNO=e.CERTINUM and e.PHONENUMBER=#mobileNumber:VARCHAR# and e.STATUS='1' 
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiJcrzMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="DEPOSITTYPE" jdbcType="VARCHAR" property="deposittype" />
+		<result column="SUM_ALL" jdbcType="VARCHAR" property="sum_all" />
+		<result column="BAL" jdbcType="VARCHAR" property="bal" />
+		<result column="FUNDBUSINESS_ID" jdbcType="VARCHAR" property="fundbusiness_id" />
+	</resultMap>
+	<select id="selectSmsJcrz" parameterClass="java.util.HashMap"
+		resultMap="SmsApiJcrzMap">
+		select a.FUNDBUSINESS_ID,b.mobile phonenumber,b.P_NAME ,b.P_ACCOUNTNO
+		,a.VALUEDATE , ( select case when h.DEPOSITTYPE='2' then '补缴' else
+		'正常汇缴' end from dbuser.TGP_PERSON_DEPOSIT h where h.FUNDBUSINESS_ID =
+		a.FUNDBUSINESS_ID fetch first 1 rows only ) DEPOSITTYPE,
+		abs(nvl(a.CREDIT_SUM,0)
+		-nvl(a.DEBIT_SUM,0)+nvl(a.INTEREST_INCOME,0)-nvl(a.INTEREST_SUM,0))
+		sum_all,
+		(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from dbuser.TGP_PERSON_DETAIL DTL, dbuser.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and <![CDATA[DTL.VALUEDATE<a.VALUEDATE]]>
+		)
+		+(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from dbuser.TGP_PERSON_DETAIL DTL, dbuser.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and DTL.VALUEDATE=a.VALUEDATE and <![CDATA[DTL.FUNDBUSINESS_ID<=a.FUNDBUSINESS_ID]]>
+		) bal
+		from
+		dbuser.TGP_PERSON_DETAIL a,dbuser.TGP_PERSON b,dbuser.TAP_FUNDBUSINESS
+		c,dbuser.TGP_PERSONACCOUNT d
+		where a.PERSONACCOUNTID=d.PERSONACCOUNTID and b.PERSONID=d.PERSONID and
+		a.FUNDBUSINESS_ID=c.FUNDBUSINESS_ID
+		and c.BUSINESS_TYPEID in ('101','103','118') and b.mobile is not null and
+		b.mobile!=''
+		and length(trim(b.mobile)) =11
+		and a.VALUEDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="AppApiJcrzMap">
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="personal_cardno" />
+		<result column="FUNDBUSINESS_ID" jdbcType="VARCHAR" property="fundbusiness_id" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="DEPOSITTYPE" jdbcType="VARCHAR" property="deposittype" />
+		<result column="SUM_ALL" jdbcType="VARCHAR" property="sum_all" />
+		<result column="BAL" jdbcType="VARCHAR" property="bal" />
+	</resultMap>
+	<select id="selectAppJcrz" parameterClass="java.util.HashMap"
+		resultMap="AppApiJcrzMap">
+		select a.FUNDBUSINESS_ID,b.PERSONAL_CARDNO,b.P_NAME ,b.P_ACCOUNTNO
+		,a.VALUEDATE , ( select case when h.DEPOSITTYPE='2' then '补缴' else
+		'正常汇缴' end from dbuser.TGP_PERSON_DEPOSIT h where h.FUNDBUSINESS_ID =
+		a.FUNDBUSINESS_ID fetch first 1 rows only ) DEPOSITTYPE,
+		abs(nvl(a.CREDIT_SUM,0)
+		-nvl(a.DEBIT_SUM,0)+nvl(a.INTEREST_INCOME,0)-nvl(a.INTEREST_SUM,0))
+		sum_all,
+		(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from dbuser.TGP_PERSON_DETAIL DTL, dbuser.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and <![CDATA[DTL.VALUEDATE<a.VALUEDATE]]>
+		)
+		+(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from dbuser.TGP_PERSON_DETAIL DTL, dbuser.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and DTL.VALUEDATE=a.VALUEDATE and <![CDATA[DTL.FUNDBUSINESS_ID<=a.FUNDBUSINESS_ID]]>
+		) bal
+		from
+		dbuser.TGP_PERSON_DETAIL a,dbuser.TGP_PERSON b,dbuser.TAP_FUNDBUSINESS
+		c,dbuser.TGP_PERSONACCOUNT d
+		where a.PERSONACCOUNTID=d.PERSONACCOUNTID and b.PERSONID=d.PERSONID and
+		a.FUNDBUSINESS_ID=c.FUNDBUSINESS_ID
+		and c.BUSINESS_TYPEID in ('101','103','118')
+		and b.PERSONAL_CARDNO in (SELEct certinum from dbuser.sms_person_info e
+		where (app_flag='1' or wx_flag='1'))
+		and a.VALUEDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiGrtzMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="BUSINESS_TYPEID" jdbcType="VARCHAR" property="business_typeid" />
+		<result column="FSE" jdbcType="VARCHAR" property="fse" />
+		<result column="BAL" jdbcType="VARCHAR" property="bal" />
+		<result column="FUNDBUSINESS_ID" jdbcType="VARCHAR" property="fundbusiness_id" />
+	</resultMap>
+	<select id="selectSmsGrtz" parameterClass="java.util.HashMap"
+		resultMap="SmsApiGrtzMap">
+		select a.FUNDBUSINESS_ID,b.mobile PHONENUMBER,b.P_NAME ,b.P_ACCOUNTNO
+		,a.VALUEDATE , (SELECT TYPENAME FROM dbuser.TAC_BUSINESSTYPE e where
+		e.BUSINESSTYPEID= c.BUSINESS_TYPEID) BUSINESS_TYPEID,
+		abs(nvl(a.CREDIT_SUM,0)
+		-nvl(a.DEBIT_SUM,0)+nvl(a.INTEREST_INCOME,0)-nvl(a.INTEREST_SUM,0))
+		fse,
+		(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and <![CDATA[DTL.VALUEDATE<a.VALUEDATE]]>
+		)
+		+(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and DTL.VALUEDATE=a.VALUEDATE and <![CDATA[DTL.FUNDBUSINESS_ID<=a.FUNDBUSINESS_ID]]>
+		) bal
+		from DBUSER.TGP_PERSON_DETAIL a,DBUSER.TGP_PERSON b,DBUSER.TAP_FUNDBUSINESS c,DBUSER.TGP_PERSONACCOUNT
+		d
+		where a.PERSONACCOUNTID=d.PERSONACCOUNTID and b.PERSONID=d.PERSONID and
+		a.FUNDBUSINESS_ID=c.FUNDBUSINESS_ID
+		and c.BUSINESS_TYPEID in ('115')
+		and b.mobile is not null and b.mobile!='' and length(trim(b.mobile)) =11
+		and a.VALUEDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="AppApiGrtzMap">
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="personal_cardno" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="BUSINESS_TYPEID" jdbcType="VARCHAR" property="business_typeid" />
+		<result column="FSE" jdbcType="VARCHAR" property="fse" />
+		<result column="BAL" jdbcType="VARCHAR" property="bal" />
+		<result column="FUNDBUSINESS_ID" jdbcType="VARCHAR" property="fundbusiness_id" />
+	</resultMap>
+	<select id="selectAppGrtz" parameterClass="java.util.HashMap"
+		resultMap="AppApiGrtzMap">
+		select a.FUNDBUSINESS_ID,b.PERSONAL_CARDNO,b.P_NAME ,b.P_ACCOUNTNO
+		,a.VALUEDATE , (SELECT TYPENAME FROM dbuser.TAC_BUSINESSTYPE e where
+		e.BUSINESSTYPEID= c.BUSINESS_TYPEID) BUSINESS_TYPEID,
+		abs(nvl(a.CREDIT_SUM,0)
+		-nvl(a.DEBIT_SUM,0)+nvl(a.INTEREST_INCOME,0)-nvl(a.INTEREST_SUM,0))
+		fse,
+		(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and <![CDATA[DTL.VALUEDATE<a.VALUEDATE]]>
+		)
+		+(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID
+		AND PC.PERSONID = b.PERSONID and DTL.VALUEDATE=a.VALUEDATE and <![CDATA[DTL.FUNDBUSINESS_ID<=a.FUNDBUSINESS_ID]]>
+		) bal
+		from DBUSER.TGP_PERSON_DETAIL a,DBUSER.TGP_PERSON b,DBUSER.TAP_FUNDBUSINESS c,DBUSER.TGP_PERSONACCOUNT
+		d
+		where a.PERSONACCOUNTID=d.PERSONACCOUNTID and b.PERSONID=d.PERSONID and
+		a.FUNDBUSINESS_ID=c.FUNDBUSINESS_ID
+		and c.BUSINESS_TYPEID in ('115')
+		and b.PERSONAL_CARDNO in (SELEct certinum from dbuser.sms_person_info e
+		where (app_flag='1' or wx_flag='1'))
+		and a.VALUEDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiJxgjMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="INTEREST" jdbcType="VARCHAR" property="interest" />
+		<result column="THIS_YEAR_BALANCE" jdbcType="VARCHAR" property="this_year_balance" />
+		<result column="FUNDBUSINESS_ID" jdbcType="VARCHAR" property="fundbusiness_id" />
+	</resultMap>
+	<select id="selectSmsJxgj" parameterClass="java.util.HashMap"
+		resultMap="SmsApiJxgjMap">
+		select a.FUND_BUSINESSID FUNDBUSINESS_ID,b.MOBILE
+		phonenumber,b.P_ACCOUNTNO,a.P_NAME ,a.END_DATE
+		,(a.TERM_INTEREST+a.CURRENT_INTEREST) INTEREST,a.THIS_YEAR_BALANCE
+		from DBUSER.TGP_YEAR_INT_PER a,DBUSER.TGP_PERSON b
+		where a.P_ACCOUNTNO=b.P_ACCOUNTNO and b.mobile is not null and b.mobile!=''
+		and length(trim(b.mobile)) =11
+		and END_DATE=#enddate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="AppApiJxgjMap">
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="personal_cardno" />
+		<result column="FUNDBUSINESS_ID" jdbcType="VARCHAR" property="fundbusiness_id" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="INTEREST" jdbcType="VARCHAR" property="interest" />
+		<result column="THIS_YEAR_BALANCE" jdbcType="VARCHAR" property="this_year_balance" />
+	</resultMap>
+	<select id="selectAppJxgj" parameterClass="java.util.HashMap"
+		resultMap="AppApiJxgjMap">
+		select a.FUND_BUSINESSID
+		FUNDBUSINESS_ID,b.PERSONAL_CARDNO,b.P_ACCOUNTNO,a.P_NAME ,a.END_DATE
+		,(a.TERM_INTEREST+a.CURRENT_INTEREST) INTEREST,a.THIS_YEAR_BALANCE
+		from DBUSER.TGP_YEAR_INT_PER a,DBUSER.TGP_PERSON b
+		where a.P_ACCOUNTNO=b.P_ACCOUNTNO
+		and b.PERSONAL_CARDNO in (SELEct certinum from dbuser.sms_person_info e
+		where (app_flag='1' or wx_flag='1'))
+		and END_DATE=#enddate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiDwcjMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="CUSTNAME" jdbcType="VARCHAR" property="custname" />
+		<result column="CALLMONTHS" jdbcType="VARCHAR" property="callmonths" />
+		<result column="CALLYEARMONTH" jdbcType="VARCHAR" property="callyearmonth" />
+		<result column="CONVERGEMONEY" jdbcType="VARCHAR" property="convergemoney" />
+	</resultMap>
+	<select id="selectSmsDwcj" parameterClass="java.util.HashMap"
+		resultMap="SmsApiDwcjMap">
+		select b.CUSTNAME
+		,to_char(add_months(to_date(a.CALLYEARMONTH,'yyyymm'),-a.CALLMONTHS),'yyyymm')
+		CALLMONTHS,
+		a.CALLYEARMONTH ,a.CONVERGEMONEY ,b.DEPUTIZENAME
+		,b.DEPTUTIZEMOBILENO phonenumber
+		from dbuser.TGP_CALL_RECORD a,
+		dbuser.TGP_CUST b where
+		a.CUSTID=b.CUSTID  <!-- and b.DEPUTIZECARDNO in <iterate conjunction="," open="(" close=")" 
+			property="bodyCardNumber"> #bodyCardNumber[]# </iterate> -->
+		and CALLDATE like #currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="AppApiDwcjMap">
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="personal_cardno" />
+		<result column="CUSTNAME" jdbcType="VARCHAR" property="custname" />
+		<result column="CALLMONTHS" jdbcType="VARCHAR" property="callmonths" />
+		<result column="CALLYEARMONTH" jdbcType="VARCHAR" property="callyearmonth" />
+		<result column="CONVERGEMONEY" jdbcType="VARCHAR" property="convergemoney" />
+	</resultMap>
+	<select id="selectAppDwcj" parameterClass="java.util.HashMap"
+		resultMap="AppApiDwcjMap">
+		select b.DEPUTIZECARDNO PERSONAL_CARDNO,b.CUSTNAME
+		,to_char(add_months(to_date(a.CALLYEARMONTH,'yyyymm'),-a.CALLMONTHS),'yyyymm')
+		CALLMONTHS,
+		a.CALLYEARMONTH ,a.CONVERGEMONEY ,b.DEPUTIZENAME
+		from
+		dbuser.TGP_CALL_RECORD a, dbuser.TGP_CUST b where
+		a.CUSTID=b.CUSTID  <!-- and b.DEPUTIZECARDNO in <iterate conjunction="," open="(" close=")" 
+			property="bodyCardNumber"> #bodyCardNumber[]# </iterate> -->
+		and CALLDATE like #currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiGrgjdxqyMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="STATUS" jdbcType="VARCHAR" property="status" />
+		<result column="BAL" jdbcType="VARCHAR" property="bal" />
+	</resultMap>
+	<select id="selectSmsGrgjdxqy" parameterClass="java.util.HashMap"
+		resultMap="SmsApiGrgjdxqyMap">
+		select e.PHONENUMBER,a.P_NAME , a.P_ACCOUNTNO ,c.STATUS ,
+		(select
+		sum(CREDIT_SUM) from dbuser.TGP_PERSONACCOUNT d,dbuser.TGP_PERSON e,
+		dbuser.TGP_PERSON_DETAIL f where f.PERSONACCOUNTID = d.PERSONACCOUNTID
+		AND d.PERSONID = e.PERSONID and
+		e.PERSONAL_CARDNO = a.PERSONAL_CARDNO )
+		bal from dbuser.TGP_PERSON a,dbuser.TGP_PERSONACCOUNT
+		c,dbuser.SMS_Person_info e where c.PERSONID=a.PERSONID and
+		a.PERSONAL_CARDNO = e.CERTINUM and e.status='1' and a.PERSONAL_CARDNO
+		in
+		<iterate conjunction="," open="(" close=")" property="bodyCardNumber">
+			#bodyCardNumber[]#
+		</iterate>
+		and c.STATUS='70007'
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="AppApiGrgjdxqyMap">
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="personal_cardno" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="STATUS" jdbcType="VARCHAR" property="status" />
+		<result column="BAL" jdbcType="VARCHAR" property="bal" />
+	</resultMap>
+	<select id="selectAppGrgjdxqy" parameterClass="java.util.HashMap"
+		resultMap="AppApiGrgjdxqyMap">
+		select a.PERSONAL_CARDNO,a.P_NAME , a.P_ACCOUNTNO ,c.STATUS ,
+		(select
+		sum(CREDIT_SUM) from dbuser.TGP_PERSONACCOUNT d,dbuser.TGP_PERSON e,
+		dbuser.TGP_PERSON_DETAIL f where f.PERSONACCOUNTID = d.PERSONACCOUNTID
+		AND d.PERSONID = e.PERSONID and
+		e.PERSONAL_CARDNO = a.PERSONAL_CARDNO )
+		bal from dbuser.TGP_PERSON a,dbuser.TGP_PERSONACCOUNT
+		c,dbuser.SMS_Person_info e where c.PERSONID=a.PERSONID and
+		a.PERSONAL_CARDNO = e.CERTINUM and (e.APP_FLAG='1' or e.WX_FLAG='1')
+		and a.PERSONAL_CARDNO in
+		<iterate conjunction="," open="(" close=")" property="bodyCardNumber">
+			#bodyCardNumber[]#
+		</iterate>
+		and c.STATUS='70007'
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiZctqMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="DRAWCAUSEID" jdbcType="VARCHAR" property="drawcauseid" />
+		<result column="SUMCAPITA" jdbcType="VARCHAR" property="sumcapita" />
+		<result column="CURRENTBALANCE" jdbcType="VARCHAR" property="currentbalance" />
+	</resultMap>
+	<select id="selectSmsZctq" parameterClass="java.util.HashMap"
+		resultMap="SmsApiZctqMap">
+		select a.FUNDBUSINESS_ID,d.mobile PHONENUMBER,a.P_NAME ,a.P_ACCOUNTNO
+		, (select TYPENAME from dbuser.TGP_DRAW_TYPE type where
+		type.DRAWTYPEID = a.DRAWCAUSEID) DRAWCAUSEID,
+		(a.CAPITAL+a.INTERES) SUMCAPITA,b.VALUEDATE ,
+		(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID AND PC.PERSONID = d.PERSONID
+		and  <![CDATA[DTL.VALUEDATE<b.VALUEDATE ]]>
+		)
+		+(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID AND PC.PERSONID = d.PERSONID
+		and DTL.VALUEDATE=b.VALUEDATE and  <![CDATA[DTL.FUNDBUSINESS_ID<=a.FUNDBUSINESS_ID]]>
+		) currentbalance
+		from DBUSER.TGP_DRAW a,DBUSER.TGP_PERSON_DETAIL b,DBUSER.TAP_FUNDBUSINESS c,DBUSER.TGP_PERSON
+		d,DBUSER.TGP_PERSONACCOUNT e
+		where a.FUNDBUSINESS_ID=b.FUNDBUSINESS_ID and
+		a.PERSONACCOUNTID=b.PERSONACCOUNTID and
+		b.PERSONACCOUNTID=e.PERSONACCOUNTID
+		and d.PERSONID=e.PERSONID and b.FUNDBUSINESS_ID=c.FUNDBUSINESS_ID and
+		c.BUSINESS_TYPEID in ('106','107')
+		and d.mobile is not null and d.mobile!=''
+		and length(trim(d.mobile)) =11
+		and b.VALUEDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="AppApiZctqMap">
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="personal_cardno" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="DRAWCAUSEID" jdbcType="VARCHAR" property="drawcauseid" />
+		<result column="SUMCAPITA" jdbcType="VARCHAR" property="sumcapita" />
+		<result column="CURRENTBALANCE" jdbcType="VARCHAR" property="currentbalance" />
+	</resultMap>
+	<select id="selectAppZctq" parameterClass="java.util.HashMap"
+		resultMap="AppApiZctqMap">
+		select a.FUNDBUSINESS_ID,d.PERSONAL_CARDNO,a.P_NAME ,a.P_ACCOUNTNO ,
+		(select TYPENAME from dbuser.TGP_DRAW_TYPE type where type.DRAWTYPEID
+		= a.DRAWCAUSEID) DRAWCAUSEID,
+		(a.CAPITAL+a.INTERES) SUMCAPITA,b.VALUEDATE ,
+		(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID AND PC.PERSONID = d.PERSONID
+		and  <![CDATA[DTL.VALUEDATE<b.VALUEDATE ]]>
+		)
+		+(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL,DBUSER. TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID AND PC.PERSONID = d.PERSONID
+		and DTL.VALUEDATE=b.VALUEDATE and  <![CDATA[DTL.FUNDBUSINESS_ID<=a.FUNDBUSINESS_ID]]>
+		) currentbalance
+		from DBUSER.TGP_DRAW a,DBUSER.TGP_PERSON_DETAIL b,DBUSER.TAP_FUNDBUSINESS c,DBUSER.TGP_PERSON
+		d,DBUSER.TGP_PERSONACCOUNT e
+		where a.FUNDBUSINESS_ID=b.FUNDBUSINESS_ID and
+		a.PERSONACCOUNTID=b.PERSONACCOUNTID and
+		b.PERSONACCOUNTID=e.PERSONACCOUNTID
+		and d.PERSONID=e.PERSONID and b.FUNDBUSINESS_ID=c.FUNDBUSINESS_ID and
+		c.BUSINESS_TYPEID in ('106','107') and
+		d.PERSONAL_CARDNO in (SELEct certinum from dbuser.sms_person_info e where (app_flag='1'
+		or wx_flag='1'))
+		and b.VALUEDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiXhtqMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="DRAWCAUSEID" jdbcType="VARCHAR" property="drawcauseid" />
+		<result column="SUMCAPITA" jdbcType="VARCHAR" property="sumcapita" />
+		<result column="CURRENTBALANCE" jdbcType="VARCHAR" property="currentbalance" />
+	</resultMap>
+	<select id="selectSmsXhtq" parameterClass="java.util.HashMap"
+		resultMap="SmsApiXhtqMap">
+		select a.FUNDBUSINESS_ID,d.mobile PHONENUMBER,a.P_NAME ,a.P_ACCOUNTNO
+		, (select TYPENAME from dbuser.TGP_DRAW_TYPE type where
+		type.DRAWTYPEID = a.DRAWCAUSEID) DRAWCAUSEID,
+		(a.CAPITAL+a.INTERES) SUMCAPITA,b.VALUEDATE ,
+		(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID AND PC.PERSONID = d.PERSONID
+		and  <![CDATA[DTL.VALUEDATE<b.VALUEDATE ]]>
+		)
+		+(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID AND PC.PERSONID = d.PERSONID
+		and DTL.VALUEDATE=b.VALUEDATE and  <![CDATA[DTL.FUNDBUSINESS_ID<=a.FUNDBUSINESS_ID]]>
+		) currentbalance
+		from DBUSER.TGP_DRAW a,DBUSER.TGP_PERSON_DETAIL b,DBUSER.TAP_FUNDBUSINESS c,DBUSER.TGP_PERSON
+		d,DBUSER.TGP_PERSONACCOUNT e
+		where a.FUNDBUSINESS_ID=b.FUNDBUSINESS_ID and
+		a.PERSONACCOUNTID=b.PERSONACCOUNTID and
+		b.PERSONACCOUNTID=e.PERSONACCOUNTID
+		and d.PERSONID=e.PERSONID and b.FUNDBUSINESS_ID=c.FUNDBUSINESS_ID and
+		c.BUSINESS_TYPEID in ('106','107')
+		and d.mobile is not null and d.mobile!=''
+		and length(trim(d.mobile)) =11
+		and b.VALUEDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="AppApiXhtqMap">
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="personal_cardno" />
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="DRAWCAUSEID" jdbcType="VARCHAR" property="drawcauseid" />
+		<result column="SUMCAPITA" jdbcType="VARCHAR" property="sumcapita" />
+		<result column="CURRENTBALANCE" jdbcType="VARCHAR" property="currentbalance" />
+	</resultMap>
+	<select id="selectAppXhtq" parameterClass="java.util.HashMap"
+		resultMap="AppApiXhtqMap">
+		select a.FUNDBUSINESS_ID,d.PERSONAL_CARDNO,a.P_NAME ,a.P_ACCOUNTNO ,
+		(select TYPENAME from dbuser.TGP_DRAW_TYPE type where type.DRAWTYPEID
+		= a.DRAWCAUSEID) DRAWCAUSEID,
+		(a.CAPITAL+a.INTERES) SUMCAPITA,b.VALUEDATE ,
+		(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL, DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID AND PC.PERSONID = d.PERSONID
+		and  <![CDATA[DTL.VALUEDATE<b.VALUEDATE ]]>
+		)
+		+(select
+		nvl(((sum(nvl(DTL.CREDIT_SUM,0))-sum(nvl(DTL.DEBIT_SUM,0)))+(sum(nvl(DTL.INTEREST_INCOME,0))-sum(nvl(DTL.INTEREST_SUM,0)))),0)
+		bal
+		from DBUSER.TGP_PERSON_DETAIL DTL,DBUSER.TGP_PERSONACCOUNT PC
+		where DTL.PERSONACCOUNTID = PC.PERSONACCOUNTID AND PC.PERSONID = d.PERSONID
+		and DTL.VALUEDATE=b.VALUEDATE and  <![CDATA[DTL.FUNDBUSINESS_ID<=a.FUNDBUSINESS_ID]]>
+		) currentbalance
+		from DBUSER.TGP_DRAW a,DBUSER.TGP_PERSON_DETAIL b,DBUSER.TAP_FUNDBUSINESS c,DBUSER.TGP_PERSON
+		d,TGP_PERSONACCOUNT e
+		where a.FUNDBUSINESS_ID=b.FUNDBUSINESS_ID and
+		a.PERSONACCOUNTID=b.PERSONACCOUNTID and
+		b.PERSONACCOUNTID=e.PERSONACCOUNTID
+		and d.PERSONID=e.PERSONID and b.FUNDBUSINESS_ID=c.FUNDBUSINESS_ID and
+		c.BUSINESS_TYPEID in ('106','107') and
+		d.PERSONAL_CARDNO in (SELEct certinum from dbuser.sms_person_info e where (app_flag='1'
+		or wx_flag='1'))
+		and b.VALUEDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiLlbdMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="FUNDBUSINESS_ID" jdbcType="VARCHAR" property="fundbusiness_id" />
+		<result column="MODIFYDATE" jdbcType="VARCHAR" property="modifydate" />
+		<result column="MONTHRATE" jdbcType="VARCHAR" property="monthrate" />
+	</resultMap>
+	<select id="selectSmsLlbd" parameterClass="java.util.HashMap"
+		resultMap="SmsApiLlbdMap">
+		select b.MOBILEPHONE PHONENUMBER,substr(a.MODIFYDATE,1,10) MODIFYDATE ,a.MONTHRATE
+		,a.STATEID,b.PERSONNAME ,b.PERSONAL_CARDNO ,
+		a.FUNDBUSINESS_ID from
+		DBUSER.TPL_CHANGERECORD a,DBUSER.TPL_BORROWERINFO b where a.oldinterestrate is not null and
+		a.ISFINAL='1' and
+		substr(a.MODIFYDATE,1,10 )>#lastdate:VARCHAR# and substr(a.MODIFYDATE,1,10 )<![CDATA[<= #thisdate:VARCHAR# ]]>
+		and
+		b.ISQIFANG='2' and a.STATEID=b.STATEID and b.MOBILEPHONE is not null and
+		b.MOBILEPHONE!=''
+		and length(trim(b.MOBILEPHONE)) =11
+		and a.MODIFYDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="AppApiLlbdMap">
+		<result column="PERSONAL_CARDNO" jdbcType="VARCHAR" property="personal_cardno" />
+		<result column="FUNDBUSINESS_ID" jdbcType="VARCHAR" property="fundbusiness_id" />
+		<result column="MODIFYDATE" jdbcType="VARCHAR" property="modifydate" />
+		<result column="MONTHRATE" jdbcType="VARCHAR" property="monthrate" />
+	</resultMap>
+	<select id="selectAppLlbd" parameterClass="java.util.HashMap"
+		resultMap="AppApiLlbdMap">
+		select b.MOBILEPHONE PHONENUMBER,substr(a.MODIFYDATE,1,10) MODIFYDATE ,a.MONTHRATE
+		,a.STATEID,b.PERSONNAME ,b.PERSONAL_CARDNO ,
+		a.FUNDBUSINESS_ID from
+		DBUSER.TPL_CHANGERECORD a,DBUSER.TPL_BORROWERINFO b where a.oldinterestrate is not null and
+		a.ISFINAL='1' and
+		substr(a.MODIFYDATE,1,10 )>#lastdate:VARCHAR# and substr(a.MODIFYDATE,1,10 )<![CDATA[<= #thisdate:VARCHAR# ]]>
+		and
+		b.ISQIFANG='2' and a.STATEID=b.STATEID
+		and b.PERSONAL_CARDNO in (SELEct certinum from dbuser.sms_person_info e
+		where (app_flag='1' or wx_flag='1'))
+		and a.MODIFYDATE=#currdate:VARCHAR#
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="AppApiDkhthMap">
+		<result column="CONTRACTACCOUNTS" jdbcType="VARCHAR" property="contractaccounts" />
+	</resultMap>
+	<select id="selectAppDkhth" parameterClass="java.util.HashMap"
+		resultMap="AppApiDkhthMap">
+		select b.CONTRACTACCOUNTS from dbuser.TPL_BORROWERINFO a,
+		DBUSER.TPL_LOANCONTRACT b,DBUSER.TPL_DKYJ c where
+		a.PERSONAL_CARDNO=#bodyCardNumber:VARCHAR# and a.STATEID=b.STATEID and
+		c.STATEID=A.STATEID
+		and c.YEARMONTH=(select max(YEARMONTH) from
+		DBUSER.TPL_DKYJ where PERSONAL_CARDNO=#bodyCardNumber:VARCHAR# ) and
+		c.balance>0
+	</select>
+	<update id="updateAppFlagAppapi40102" parameterClass="java.util.HashMap">
+		UPDATE DBUSER.SMS_PERSON_INFO set APP_FLAG=#app_flag:VARCHAR#
+		where
+		CERTINUM=#idcardNumber:VARCHAR# and ACCNAME=#fullName:VARCHAR# 
+	</update>
+	<update id="updateWXFlagAppapi40102" parameterClass="java.util.HashMap">
+		UPDATE
+		DBUSER.SMS_PERSON_INFO set WX_FLAG=#wx_flag:VARCHAR# where
+		CERTINUM=#idcardNumber:VARCHAR# and ACCNAME=#fullName:VARCHAR# 
+	</update>
+	<update id="updateSmsFlag" parameterClass="java.util.HashMap">
+		UPDATE DBUSER.SMS_PERSON_INFO set STATUS=#status:VARCHAR# where
+		STATUS!=#status1:VARCHAR#
+		<isNotEmpty prepend="AND" property="idcardNumber">
+            <![CDATA[ CERTINUM=#idcardNumber:VARCHAR# ]]>
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="mobileNumber">
+            <![CDATA[ PHONENUMBER=#mobileNumber:VARCHAR# ]]>
+		</isNotEmpty>
+	</update>
+	<update id="updateSmsPhonenumber" parameterClass="java.util.HashMap">
+		UPDATE
+		DBUSER.SMS_PERSON_INFO set
+		PHONENUMBER=#newMobileNumber:VARCHAR#,HANDSET = #mobileNumber:VARCHAR#
+		where PHONENUMBER=#mobileNumber:VARCHAR# and status='1'
+	</update>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiZctqplMap">
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="DRAWCAUSEID" jdbcType="VARCHAR" property="drawcauseid" />
+		<result column="SUMCAPITA" jdbcType="VARCHAR" property="sumcapita" />
+		<result column="CURRENTBALANCE" jdbcType="VARCHAR" property="currentbalance" />
+	</resultMap>
+	<select id="selectSmsZctqpl" parameterClass="java.util.HashMap"
+		resultMap="SmsApiZctqplMap">
+		select P_NAME ,P_ACCOUNTNO ,DRAWCAUSEID ,(CAPITAL+INTERES)
+		SUMCAPITA,ACCOUNTBALANCE CURRENTBALANCE
+		from dbuser.TGP_DRAW where
+		DRAWCAUSEID not
+		in('50','60','70','71','80','81','90') and
+		BUSINESS_DATE=#currdate:VARCHAR# order by DRAWCAUSEID
+	</select>
+	<resultMap class="java.util.LinkedHashMap" id="SmsApiXhtqplMap">
+		<result column="P_NAME" jdbcType="VARCHAR" property="p_name" />
+		<result column="P_ACCOUNTNO" jdbcType="VARCHAR" property="p_accountno" />
+		<result column="DRAWCAUSEID" jdbcType="VARCHAR" property="drawcauseid" />
+		<result column="SUMCAPITA" jdbcType="VARCHAR" property="sumcapita" />
+		<result column="CURRENTBALANCE" jdbcType="VARCHAR" property="currentbalance" />
+	</resultMap>
+	<select id="selectSmsXhtqpl" parameterClass="java.util.HashMap"
+		resultMap="SmsApiXhtqplMap">
+		select P_NAME ,P_ACCOUNTNO ,DRAWCAUSEID,(CAPITAL+INTERES)
+		SUMCAPITA,(ACCOUNTBALANCE-CAPITAL) CURRENTBALANCE
+		from dbuser.TGP_DRAW
+		where DRAWCAUSEID in('50','60','70','71','80','81','90') and
+		BUSINESS_DATE=#currdate:VARCHAR# order by DRAWCAUSEID
+	</select>
+	<resultMap class="java.util.HashMap" id="SmsApiStatusMap">
+		<result column="PHONENUMBER" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="CERTINUM" jdbcType="VARCHAR" property="certinum" />
+		<result column="STATUS" jdbcType="VARCHAR" property="status" />
+	</resultMap>
+	<select id="selectSmsapiStatus" parameterClass="java.util.HashMap" resultMap="SmsApiStatusMap">
+		select PHONENUMBER ,CERTINUM ,status
+		from dbuser.SMS_PERSON_INFO
+		<dynamic prepend="where">
+			<isNotEmpty prepend="AND" property="idcardNumber">
+            <![CDATA[ CERTINUM=#idcardNumber:VARCHAR# ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="mobileNumber">
+            <![CDATA[ PHONENUMBER=#mobileNumber:VARCHAR# ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="status">
+            <![CDATA[ STATUS=#status:VARCHAR# ]]>
+			</isNotEmpty>
+		</dynamic>
+	</select>
+</sqlMap>

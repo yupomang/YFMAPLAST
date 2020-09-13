@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<tr_code>A020102</tr_code>
+			<corp_no></corp_no>
+			<user_no></user_no>
+			<serial_no></serial_no>
+			<req_no></req_no>
+			<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+			<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+			<atom_tr_count></atom_tr_count>
+			<channel>5000</channel>
+			<sign>5000</sign>
+			<filename></filename>
+			<ogl_serial_no></ogl_serial_no>
+			<key ></key >
+			<reserved></reserved>			
+	</head>
+	<body>
+		<begdate>[@getVariable,startdate,10,0,0@]</begdate>	
+		<enddate>[@getVariable,enddate,10,0,0@]</enddate>
+		<cardno></cardno>
+		<accnum>[@getVariable,surplusAccount,12,0,0@]</accnum>
+		<ceridnum>[@getVariable,bodyCardNumber,20,0,0@]</ceridnum>
+		<pageNo>[@getVariable,pagenum,12,0,0@]</pageNo>	
+		<pageSize>[@getVariable,pagerows,8,0,0@]</pageSize>	
+		<newcnt></newcnt>		
+	</body>
+</root>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+<head>
+<tr_code>B00001</tr_code>
+<corp_no>1001</corp_no>
+<req_no>[@getVariable,sendSeqno,50,0,0@]</req_no>
+<serial_no>1</serial_no>
+<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+<atom_tr_count>1</atom_tr_count>
+<channel>1</channel>
+</head>
+<body>
+<talincome1>[@getVariable,totalincome,18,0,0@]</talincome1>
+<birthday>[@getVariable,birthday1,10,0,0@]</birthday>
+<sex>[@getVariable,loansex1,30,0,0@]</sex>
+<marryrelation>[@getVariable,freeuse1,8,0,0@]</marryrelation>
+<talincome2>[@getVariable,paycity,30,0,0@]</talincome2>
+<dflag>[@getVariable,loanbal1,18,0,0@]</dflag>
+<loantype>[@getVariable,housetype,30,0,0@]</loantype>
+<finishdate>[@getVariable,secfinishdate,10,0,0@]</finishdate>
+<buyhousepic>[@getVariable,buyhouseamt,18,0,0@]</buyhousepic>
+<buyhousearea>[@getVariable,buyhousearea,30,0,0@]</buyhousearea>
+<secloanflag>[@getVariable,repaymode,30,0,0@]</secloanflag>
+</body>
+</root>

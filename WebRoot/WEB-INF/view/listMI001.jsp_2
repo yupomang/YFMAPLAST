@@ -1,0 +1,139 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/include/head.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>分组维护</title>
+		<link rel="stylesheet" type="text/css"
+			href="<%=request.getContextPath()%>/script/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css"
+			href="<%=request.getContextPath()%>/script/themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="mi.css">
+		<script type="text/javascript"
+			src="<%=request.getContextPath()%>/script/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript"
+			src="<%=request.getContextPath()%>/script/jquery.easyui.min.js"></script>
+		<script>
+		$(function(){
+			var lastIndex;
+			$('#tt').datagrid({
+				toolbar:[{
+					text:'增加',
+					iconCls:'icon-add',
+					handler:function(){
+						$('#tt').datagrid('endEdit', lastIndex);
+						$('#tt').datagrid('appendRow',{
+							privilegeId:'',
+							groupname:'',
+						});
+						lastIndex = $('#tt').datagrid('getRows').length-1;
+						$('#tt').datagrid('selectRow', lastIndex);
+						$('#tt').datagrid('beginEdit', lastIndex);
+					}
+				},'-',{
+					text:'删除',
+					iconCls:'icon-remove',
+					handler:function(){
+						var row = $('#tt').datagrid('getSelected');
+						if (row){
+							var index = $('#tt').datagrid('getRowIndex', row);
+							$('#tt').datagrid('deleteRow', index);
+						}
+					}
+				},'-',{
+					text:'保存',
+					iconCls:'icon-save',
+					handler:function(){
+						var rows = $('#tt').datagrid('getChanges');
+						var jsonsMI001 = [{"groupname":"bbb","privilegeId":"9"},{"groupname":"aaa","privilegeId":"7"}];
+						/*$.ajax( {
+							type : "POST",
+							url : "<%=request.getContextPath()%>/mi001.json?method=saveAll",
+							data : {listMI001:jsonsMI001},
+							dataType: "json",
+							success : function(data) {
+								if(data.resultCold == "0"){
+									$('#tt').datagrid('acceptChanges');
+								}
+								else{
+									alert("保存失败！");
+								}
+							},
+							error :function(){
+								alert("网络连接出错！");
+							}
+						});*/
+						 $.getJSON("<%=request.getContextPath()%>/mi001.json",{listMI001:jsonsMI001,method:"saveAll"},function(result){
+						    if(result.resultCode == "0"){
+								$('#tt').datagrid('acceptChanges');
+							}
+							else{
+								alert("保存失败！");
+							}
+						 });
+					}
+				},'-',{
+					text:'撤销',
+					iconCls:'icon-undo',
+					handler:function(){
+						$('#tt').datagrid('rejectChanges');
+					}
+				},'-',{
+					text:'GetChanges',
+					iconCls:'icon-search',
+					handler:function(){
+						var rows = $('#tt').datagrid('getChanges');
+						alert('changed rows: ' + rows.length + ' lines');
+					}
+				}],
+				onBeforeLoad:function(){
+					$(this).datagrid('rejectChanges');
+					<c:forEach items="${result}" var="mi001">
+						$('#tt').datagrid('appendRow',{
+							privilegeId:'${mi001.privilegeId}',
+							groupname:'${mi001.groupname}',
+						});
+						lastIndex = $('#tt').datagrid('getRows').length;
+					</c:forEach>
+				},
+				onClickRow:function(rowIndex){
+					if (lastIndex != rowIndex){
+						$('#tt').datagrid('endEdit', lastIndex);
+						$('#tt').datagrid('beginEdit', rowIndex);
+					}
+					lastIndex = rowIndex;
+				}
+			});
+		});
+	</script>
+	</head>
+	<body>
+		<h2>
+			分组信息维护
+		</h2>
+		<div class="demo-info" style="margin-bottom: 10px">
+			<div class="demo-tip icon-tip"></div>
+			<div>
+				点击一行可进行修改。
+			</div>
+		</div>
+
+		<table id="tt" style="width: 700px; height: auto"
+			title="Editable DataGrid" iconCls="icon-edit" singleSelect="true"
+			idField="itemid">
+			<thead>
+				<tr>
+					<th field="privilegeId" width="180" editor="text">
+						组号
+					</th>
+					<th field="groupname" width="300" editor="text">
+						组名
+					</th>
+				</tr>
+			</thead>
+		</table>
+
+	</body>
+</html>

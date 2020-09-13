@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<root>
+		<head>
+			<transCode>430010</transCode>
+			<sendDate>[@getVariable,sendDate,10,0,0@]</sendDate>
+			<sendTime>[@getVariable,sendTime,8,0,0@]</sendTime>
+			<sendSeqno>[@getVariable,sendSeqno,50,0,0@]</sendSeqno>
+			<key>[@getVariable,key,8,0,0@]</key>
+			<buzType>5001</buzType>
+		</head>
+		<body>
+			<certinum>[@getVariable,idcardNumber,30,0,0@]</certinum>
+		</body>
+	</root>

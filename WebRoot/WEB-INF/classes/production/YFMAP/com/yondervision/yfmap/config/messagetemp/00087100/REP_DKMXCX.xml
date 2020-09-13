@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<tr_code>A020304a</tr_code>
+			<corp_no></corp_no>
+			<req_no></req_no>
+			<serial_no></serial_no>
+			<ans_no>[@setVariable,centerSeqno,30,0,0@]</ans_no>
+			<next_no></next_no>
+			<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+			<tr_time>[@setVariable,sendTime,8,0,0@]</tr_time>
+			<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+			<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+			<particular_code></particular_code>
+			<particular_info></particular_info>
+			<atom_tr_count></atom_tr_count>
+			<reserved></reserved>
+	</head>
+	<body>
+		<record_num></record_num>
+		<pageNo></pageNo>
+		<pageCount>[@setVariable,pageCount,18,0,0@]</pageCount>
+		<rowCount></rowCount>
+		<planretprin_z>[@setVariable,planretprin_z,18,0,0@]</planretprin_z>
+		<planretint_z>[@setVariable,planretint_z,18,0,0@]</planretint_z>
+		<infactprin_z>[@setVariable,infactprin_z,18,0,0@]</infactprin_z>
+		<infactint_z>[@setVariable,infactint_z,18,0,0@]</infactint_z>
+   		<detail details="10">
+  			<seq></seq>
+   			<plandate>[@setVariable,0,20,0,0@]</plandate>
+			<planretprin>[@setVariable,1,40,0,0@]</planretprin>
+			<planretint>[@setVariable,2,12,0,0@]</planretint>
+			<planprinint>[@setVariable,3,20,0,0@]</planprinint>
+   			<infactdate>[@setVariable,4,20,0,0@]</infactdate>
+			<infactretprin>[@setVariable,5,100,0,0@]</infactretprin>
+			<infactretint>[@setVariable,6,18,0,0@]</infactretint>
+			<infactprinint>[@setVariable,7,18,0,0@]</infactprinint>
+			<infactpun>[@setVariable,8,18,0,0@]</infactpun>
+			<retloanflag>[@setVariable,9,18,0,0@]</retloanflag>
+		</detail>
+		<seq></seq>
+	</body>
+</root>

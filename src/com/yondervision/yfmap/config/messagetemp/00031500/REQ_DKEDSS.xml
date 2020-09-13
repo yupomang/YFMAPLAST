@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>0</reqflag>
+		<msgtype>94</msgtype>
+		<tr_code>X00024</tr_code>
+		<corp_no>00031500</corp_no>
+		<user_no>8888</user_no>
+		<req_no>[@getVariable,sendSeqno,100,0,0@]</req_no>
+		<oreq_no></oreq_no>
+		<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+		<channel>[@getVariable,channel,8,0,0@]</channel>
+		<sign>28</sign>
+		<key>1</key>
+		<reserved>1</reserved>			
+	</head>
+	<body>
+		<multiloan>[@getVariable,multiloan,50,0,0@]</multiloan>
+		<count>[@getVariable,count,50,0,0@]</count>
+		<inflag1>[@getVariable,inflag1,50,0,0@]</inflag1>
+		<cerid1>[@getVariable,cerid1,50,0,0@]</cerid1>
+		<fundaccnum1>[@getVariable,fundaccnum1,50,0,0@]</fundaccnum1>
+		<card1>[@getVariable,card1,50,0,0@]</card1>
+		<password1>[@getVariable,password1,50,0,0@]</password1>
+		<unitchar1>[@getVariable,unitchar1,50,0,0@]</unitchar1>
+		<inflag2>[@getVariable,inflag2,50,0,0@]</inflag2>
+		<cerid2>[@getVariable,cerid2,50,0,0@]</cerid2>
+		<fundaccnum2>[@getVariable,fundaccnum2,50,0,0@]</fundaccnum2>
+		<card2>[@getVariable,card2,50,0,0@]</card2>
+		<password2>[@getVariable,password2,50,0,0@]</password2>
+		<unitchar2>[@getVariable,unitchar2,50,0,0@]</unitchar2>
+		<inflag3>[@getVariable,inflag3,50,0,0@]</inflag3>
+		<cerid3>[@getVariable,cerid3,50,0,0@]</cerid3>
+		<fundaccnum3>[@getVariable,fundaccnum3,50,0,0@]</fundaccnum3>
+		<card3>[@getVariable,card3,50,0,0@]</card3>
+		<password3>[@getVariable,password3,50,0,0@]</password3>
+		<unitchar3>[@getVariable,unitchar3,50,0,0@]</unitchar3>
+		<loanterm>[@getVariable,loanterm,50,0,0@]</loanterm>
+		<cardno>[@getVariable,cardno,50,0,0@]</cardno>
+		<psword>[@getVariable,pwd,16,0,0@]</psword>
+	</body>
+</root>

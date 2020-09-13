@@ -1,0 +1,21 @@
+<flag>0</>
+<TellCode>0000</>
+<ChkCode>0000</>
+<BrcCode>00000000</>
+<TranIP>10.22.21.26</>
+<STimeStamp>2013-07-24 09:55:28:966000</>
+<TranCode>149003</>
+<TranChannel>00</>
+<TranDate>2014-12-11</>
+<ChannelSeq>398243</>
+<MTimeStamp>2013-07-24 09:55:28:967000</>
+<AuthFlag>0</>
+<AuthCode1>IVR0</>
+<AuthCode2>IVR0</>
+<AuthCode3>IVR0</>
+<RspCode>[@setVariable,recode,10,0,0@]</>
+<RspMsg>[@setVariable,msg,100,0,0@]</>
+<NoteMsg></>
+<TranSeq>90</>
+<BusiSeq>4453</>
+<actmp1024>[@setVariable,fileName,500,0,0@]</>

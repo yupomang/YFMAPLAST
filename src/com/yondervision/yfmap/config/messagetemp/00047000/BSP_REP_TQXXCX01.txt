@@ -1,0 +1,37 @@
+<AuthCode1>6666</>
+<AuthCode2>6666</>
+<AuthCode3>6666</>
+<AuthFlag></>
+<BrcCode>00000470</>
+<BusiSeq>6184</>
+<ChannelSeq>695491</>
+<ChkCode>6666</>
+<FinancialDate>2016-07-01</>
+<HostBank></>
+<MTimeStamp>2016-11-15 12:21:46</>
+<NoteMsg></>
+<RspCode>[@setVariable,recode,10,0,0@]</>
+<RspMsg>[@setVariable,msg,100,0,0@]</>
+<STimeStamp>2016-11-15 12:21:46</>
+<SubBank></>
+<TellCode>6666</>
+<TranChannel>21</>
+<TranCode>159004</>
+<TranDate>2016-07-01</>
+<TranIP>18.16.2.9</>
+<TranSeq>6184</>
+<bal>[@getVariable,bal,150,0,0@]</>
+<cardno>[@getVariable,cardno,150,0,0@]</>
+<certitype>[@getVariable,certitype_code,150,0,0@]</>
+<counts>[@getVariable,counts,150,0,0@]</>
+<frzflag>[@getVariable,frzflag_code,150,0,0@]</>
+<intamt>[@getVariable,intamt,150,0,0@]</>
+<indiaccstate>[@getVariable,indiaccstate_code,150,0,0@]</>
+<sealtype>[@getVariable,sealtype_code,150,0,0@]</>
+<lpaym>[@getVariable,lpaym,150,0,0@]</>
+<unitaccname>[@getVariable,unitaccname,150,0,0@]</>
+<unitaccnum>[@getVariable,unitaccnum,150,0,0@]</>
+<instname>[@getVariable,certitype,150,0,0@]</>
+<instnam1>[@getVariable,sealtype,150,0,0@]</>
+<instnam2>[@getVariable,indiaccstate,150,0,0@]</>
+<apprnum>[@getVariable,frzflag,150,0,0@]</>

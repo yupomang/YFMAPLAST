@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>81</msgtype>
+		<tr_code>X00011</tr_code>
+		<corp_no>00031500</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>
+		<loancontrnum>[@getVariable,loancontrnum,100,0,0@]</loancontrnum>
+		<loanbal>[@getVariable,loanbal,100,0,0@]</loanbal>
+		<remainterm>[@getVariable,remainterm,100,0,0@]</remainterm>
+		<accname1>[@getVariable,accname1,100,0,0@]</accname1>
+		<accname2>[@getVariable,accname2,100,0,0@]</accname2>
+		<cerid1>[@getVariable,cerid1,100,0,0@]</cerid1>
+		<cerid2>[@getVariable,cerid2,100,0,0@]</cerid2>
+		<loansum>[@getVariable,loansum,100,0,0@]</loansum>
+		<loanterm>[@getVariable,loanterm,100,0,0@]</loanterm>
+		<obankaccnum>[@getVariable,obankaccnum,100,0,0@]</obankaccnum>
+		<agencybank>[@getVariable,agencybank,100,0,0@]</agencybank>
+		<bankacc1>[@getVariable,bankacc1,100,0,0@]</bankacc1>
+		<bankacc2>[@getVariable,bankacc2,100,0,0@]</bankacc2>
+		<chackman>[@getVariable,chackman,100,0,0@]</chackman>
+	</body>
+</root>

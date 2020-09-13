@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>78</msgtype>
+		<tr_code>X00008</tr_code>
+		<corp_no>00031500</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,200,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>		
+		<dqys>[@setVariable,zys,50,0,0@]</dqys>
+   		<dqysjls>[@setVariable,zjlx,50,0,0@]</dqysjls>
+   		<zjls>[@setVariable,zjls,50,0,0@]</zjls>
+   		<zys>[@setVariable,gfdz,50,0,0@]</zys>   		
+   		<detail details="4">
+   			<lpmc>[@setVariable,0,2000,0,0@]</lpmc>
+			<wdmc>[@setVariable,1,2000,0,0@]</wdmc>
+			<kfdw>[@setVariable,2,2000,0,0@]</kfdw>
+			<pzzh>[@setVariable,3,2000,0,0@]</pzzh>
+		</detail>
+	</body>
+</root>

@@ -1,0 +1,17 @@
+<flag>0</>
+<TellCode>0000</>
+<ChkCode>0000</>
+<BrcCode>00000000</>
+<TranIP>10.22.21.26</>
+<STimeStamp>[@getVariable,sendTime,30,0,0@]</>
+<TranCode>153005</>
+<TranChannel>00</>
+<TranDate>[@getVariable,sendDate,10,0,0@]</>
+<ChannelSeq>398243</>
+<MTimeStamp>[@getVariable,sendTime,30,0,0@]</>
+<AuthFlag>0</>
+<AuthCode2>0000</>
+<AuthCode3>0000</>
+<AuthCode1>0000</>
+<certinum></>
+<accnum>[@getVariable,surplusAccount,40,0,0@]</>

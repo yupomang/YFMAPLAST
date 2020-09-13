@@ -1,0 +1,25 @@
+<flag>0</>
+<TellCode>0129</>
+<ChkCode>0129</>
+<BrcCode>05740008</>
+<TranIP>172.10.0.1</>
+<STimeStamp>2018-03-19 09:14:25</>
+<TranCode>103817</>
+<TranChannel>00</>
+<TranDate>2017-09-19</>
+<ChannelSeq>0000</>
+<clientMAC>E8:39:35:A7:AC:58</>
+<MTimeStamp>2018-03-19 09:14:25</>
+<AuthFlag>0</>
+<AuthCode2>0129</>
+<AuthCode3>0129</>
+<AuthCode1>0129</>
+<certinum></>
+<housecontrnum>[@getVariable,housecontrnum,128,0,0,0,0@]</>
+<accname></>
+
+
+
+
+
+

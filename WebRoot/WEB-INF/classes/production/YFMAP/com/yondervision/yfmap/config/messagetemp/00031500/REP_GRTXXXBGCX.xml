@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>99</msgtype>
+		<tr_code>X00029</tr_code>
+		<corp_no>[@setVariable,brcCode,13,0,0@]</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>		
+   		<sjh>[@setVariable,sjh,50,0,0@]</sjh>
+	</body>
+</root>

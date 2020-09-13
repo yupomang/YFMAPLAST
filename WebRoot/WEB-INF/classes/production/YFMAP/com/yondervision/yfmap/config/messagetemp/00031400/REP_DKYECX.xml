@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>75</msgtype>
+		<tr_code>X00005</tr_code>
+		<corp_no>00031400</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>		
+   		<dkzh>[@setVariable,loanaccnum,100,0,0@]</dkzh>
+   		<hkfs>[@setVariable,repaymode,100,0,0@]</hkfs>
+   		<dkll>[@setVariable,loanrate,100,0,0@]</dkll>
+   		<htztbz>[@setVariable,htztbz,100,0,0@]</htztbz>
+   		<dkztbz>[@setVariable,dkztbz,100,0,0@]</dkztbz>
+   		<jqbz>[@setVariable,jqbz,100,0,0@]</jqbz>
+   		<fkrq>[@setVariable,fkrq,100,0,0@]</fkrq>
+   		<jqrq>[@setVariable,jqrq,100,0,0@]</jqrq>
+   		<dqrq>[@setVariable,dqrq,100,0,0@]</dqrq>
+   		<hkr>[@setVariable,repaydate,100,0,0@]</hkr>
+   		<dkje>[@setVariable,loanamt,100,0,0@]</dkje>
+   		<dqye>[@setVariable,loanbal,100,0,0@]</dqye>
+   		<yqqs>[@setVariable,overdueterms,100,0,0@]</yqqs>
+		<yqbj>[@setVariable,yqbj,100,0,0@]</yqbj>
+		<yqlx>[@setVariable,yqlx,100,0,0@]</yqlx>
+		<yqfx>[@setVariable,yqfx,100,0,0@]</yqfx>
+		<dkqx>[@setVariable,terms,100,0,0@]</dkqx>
+		<syqx>[@setVariable,syqx,100,0,0@]</syqx>
+   		<fwdz>[@setVariable,gfdz,200,0,0@]</fwdz>
+   		<jkrxm>[@setVariable,loanaccname,100,0,0@]</jkrxm>
+   		<jkrzjh>[@setVariable,zjhm,100,0,0@]</jkrzjh>
+   		<gthkrxm>[@setVariable,gtjkrxm,100,0,0@]</gthkrxm>
+   		<gthkrzjh>[@setVariable,gtjkrzjh,100,0,0@]</gthkrzjh>   		
+	</body>
+</root>

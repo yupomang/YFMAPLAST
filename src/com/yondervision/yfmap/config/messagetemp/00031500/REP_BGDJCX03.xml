@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>83</msgtype>
+		<tr_code>X00013</tr_code>
+		<corp_no>00031500</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>
+		<jkrxm>[@getVariable,jkrxm,100,0,0@]</jkrxm>
+		<jkrsfzh>[@getVariable,jkrsfzh,100,0,0@]</jkrsfzh>
+		<jkrhth>[@getVariable,jkrhth,100,0,0@]</jkrhth>
+		<hkzq>[@getVariable,hkzq,100,0,0@]</hkzq>
+		<hkfs>[@getVariable,hkfs,100,0,0@]</hkfs>
+		<yshkr>[@getVariable,yshkr,100,0,0@]</yshkr>
+		<gfdz>[@getVariable,gfdz,100,0,0@]</gfdz>
+		<qb>[@getVariable,qb,100,0,0@]</qb>
+		<qx>[@getVariable,qx,100,0,0@]</qx>
+		<qfx>[@getVariable,qfx,100,0,0@]</qfx>
+		<qkhj>[@getVariable,qkhj,100,0,0@]</qkhj>
+		<wdqbj>[@getVariable,wdqbj,100,0,0@]</wdqbj>
+		<xcslx>[@getVariable,xcslx,100,0,0@]</xcslx>
+		<tqqbhkje>[@getVariable,tqqbhkje,100,0,0@]</tqqbhkje>
+	</body>
+</root>

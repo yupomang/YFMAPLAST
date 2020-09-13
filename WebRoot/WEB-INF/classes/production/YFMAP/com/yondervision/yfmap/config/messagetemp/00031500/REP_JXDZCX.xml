@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>74</msgtype>
+		<tr_code>X00004</tr_code>
+		<corp_no>00031500</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>		
+		<gjjzh>[@setVariable,accnum,100,0,0@]</gjjzh>
+   		<xm>[@setVariable,accname,100,0,0@]</xm>
+   		<jxrq>[@setVariable,intdate,100,0,0@]</jxrq>
+   		<sqjz>[@setVariable,keepamt,100,0,0@]</sqjz>
+   		<bqjq>[@setVariable,incramt,100,0,0@]</bqjq>
+   		<bqtq>[@setVariable,drawamt,100,0,0@]</bqtq>   		
+   		<lx>[@setVariable,intamt,100,0,0@]</lx>
+   		<bxhj>[@setVariable,bal,100,0,0@]</bxhj>
+	</body>
+</root>

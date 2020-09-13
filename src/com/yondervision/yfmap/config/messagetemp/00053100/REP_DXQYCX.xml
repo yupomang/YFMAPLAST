@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>86</msgtype>
+		<tr_code>X00016</tr_code>
+		<corp_no>00053100</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>		
+		<qylx>[@setVariable,signType,100,0,0@]</qylx>
+   		<gjjzh>[@setVariable,surplusAccount,50,0,0@]</gjjzh>
+   		<grxm>[@setVariable,accname,100,0,0@]</grxm>
+   		<zjhm>[@setVariable,idcard,100,0,0@]</zjhm>
+   		<sjh>[@setVariable,signPhoneNumber,50,0,0@]</sjh>
+   		<dqrq>[@setVariable,endDate,50,0,0@]</dqrq>
+   		<dkzh>[@setVariable,loanaccnum,50,0,0@]</dkzh>
+   		<qyzt>[@setVariable,signResultStatus,50,0,0@]</qyzt>
+	</body>
+</root>

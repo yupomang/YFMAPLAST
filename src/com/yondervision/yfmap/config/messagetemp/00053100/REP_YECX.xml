@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>72</msgtype>
+		<tr_code>X00002</tr_code>
+		<corp_no>00053100</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>		
+		<dwmc>[@setVariable,companyName,100,0,0@]</dwmc>
+   		<dwzh>[@setVariable,companyAccount,50,0,0@]</dwzh>
+   		<grzh>[@setVariable,grzh,50,0,0@]</grzh>
+   		<zhzt>[@setVariable,accountStatus,100,0,0@]</zhzt>
+   		<kyye>[@setVariable,accountBalance,18,0,0@]</kyye>
+   		<jcjs>[@setVariable,paymentBase,18,0,0@]</jcjs>
+   		<lxjcy>[@setVariable,lastestPaymentDate,20,0,0@]</lxjcy>
+	</body>
+</root>

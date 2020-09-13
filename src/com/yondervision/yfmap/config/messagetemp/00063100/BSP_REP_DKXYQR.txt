@@ -1,0 +1,23 @@
+<TranCode>600052</>
+<TranDate>2016-07-19</>
+<STimeStamp>2016-07-19 09:39:02:109000</>
+<MTimeStamp>2016-07-19 09:39:02:109000</>
+<BrcCode>00063114</>
+<TellCode>1903</>
+<ChkCode>1903</>
+<AuthCode1>1903</>
+<AuthCode2>1903</>
+<AuthCode3>1903</>
+<TranChannel>01</>
+<TranIP>192.168.6.101</>
+<ChannelSeq>21910000</>
+<TranSeq>3590</>
+<BusiSeq>3590</>
+<RspCode>[@setVariable,recode,10,0,0@]</>
+<RspMsg>[@setVariable,msg,100,0,0@]</>
+<NoteMsg></>
+<AuthFlag></>
+<FinancialDate>2016-07-19</>
+<HostBank></>
+<SubBank></>
+<protoColNum>1442090087-1</>

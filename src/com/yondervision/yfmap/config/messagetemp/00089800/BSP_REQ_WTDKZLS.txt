@@ -1,0 +1,17 @@
+<TellCode>0000</>
+<ChkCode>0000</>
+<BrcCode>00000000</>
+<TranIP>10.22.11.12</>
+<STimeStamp>[@getVariable,sendTime,30,0,0@]</>
+<TranCode>149364</>
+<TranChannel>10</>
+<TranDate>[@getVariable,sendDate,10,0,0@]</>
+<ChannelSeq>398243</>
+<MTimeStamp>[@getVariable,sendTime,30,0,0@]</>
+<AuthFlag>0</>
+<AuthCode2>0000</>
+<AuthCode3>0000</>
+<AuthCode1>0000</>
+<OppOperList>12320</>
+<jkhtbh>[@getVariable,jkhtbh,100,0,0@]</jkhtbh>
+<upfilename>[@getVariable,upfilename,100,0,0@]</upfilename>

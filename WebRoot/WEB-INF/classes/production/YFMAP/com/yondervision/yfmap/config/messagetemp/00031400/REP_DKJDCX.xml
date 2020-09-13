@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>77</msgtype>
+		<tr_code>X00007</tr_code>
+		<corp_no>00031400</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,200,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>
+		<sqrq>[@setVariable,apprfDate,20,0,0@]</sqrq>
+		<dqdkjdbs>[@setVariable,apprflag,20,0,0@]</dqdkjdbs>
+		<dqdkjdmx>[@setVariable,apprflagMSG,1000,0,0@]</dqdkjdmx>
+		<detail details="2">
+   			<dkjdbs>[@setVariable,0,20,0,0@]</dkjdbs>
+			<dkjdmx>[@setVariable,1,1000,0,0@]</dkjdmx>	
+		</detail>
+	</body>
+</root>

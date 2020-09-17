@@ -112,7 +112,7 @@ public class YDFilter implements Filter {
 					  ||path.startsWith("/appapi00214")||path.startsWith("/appapi00215")||path.startsWith("/appapi00216")||path.startsWith("/appapi00217")||path.startsWith("/appapi00218")
 					  ||path.startsWith("/appapi00219")||path.startsWith("/appapi00220")||path.startsWith("/appapi10002")||path.startsWith("/appapi00221")
 					  ||path.startsWith("/appapi00222")||path.startsWith("/appapi00223")||path.startsWith("/appapi00224")||path.startsWith("/appapi00225")||path.startsWith("/appapi00226")
-					  ||path.startsWith("/appapi00227")||path.startsWith("/appapi00229")||path.startsWith("/appapi00233")||path.startsWith("/appapi00234")||path.startsWith("/appapi00236")||path.startsWith("/appapi00237")
+					  ||path.startsWith("/appapi00227")||path.startsWith("/appapi00229")||path.startsWith("/")||path.startsWith("/appapi00234")||path.startsWith("/appapi00236")||path.startsWith("/appapi00237")
 					  ||path.startsWith("/appapi00250")||path.startsWith("/appapi00251")||path.startsWith("/appapi00252")||path.startsWith("/appapi00253")||path.startsWith("/appapi00254")||path.startsWith("/appapi00255")
 			 )
 			 {
@@ -129,7 +129,7 @@ public class YDFilter implements Filter {
 				  response.setCharacterEncoding("GBK");
 				  chain.doFilter(request1, response);
 			 }else if (path.startsWith("/webapi80001")||path.startsWith("/webapi80002")||path.startsWith("/webapi80003")
-					 ||path.startsWith("/webapi80005")||path.startsWith("/webapi80009")
+					 ||path.startsWith("/webapi80005")||path.startsWith("/webapi80009")||path.startsWith("/webapi80010")
 					 ||path.startsWith("/webapi80006")||path.startsWith("/webapi80007")||path.startsWith("/webapi80008")
 					 ||path.startsWith("/webapi90001")||path.startsWith("/appapi00228")||path.startsWith("/appapi00235")
 					 ||path.startsWith("/appapi00240")||path.startsWith("/appapi00241")||path.startsWith("/appapi00242")

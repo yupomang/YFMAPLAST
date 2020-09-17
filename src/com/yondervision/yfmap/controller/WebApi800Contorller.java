@@ -232,6 +232,22 @@ public class WebApi800Contorller {
 		return "";
 	}
 
+	/**
+	 *  住房公积金个人缴存明细(省平台)
+	 * @param form
+	 * @param modelMap
+	 * @throws Exception
+	 */
+	@RequestMapping("/webapi80010.{ext}")
+	public String webapi80010(AppApi030Form form, ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) throws Exception{
+		log.info(Constants.LOG_HEAD+"webapi80010 begin.");
+		log.debug("form:"+form);
+		CtrlHandleInter business = (CtrlHandleInter) Class.forName("com.yondervision.yfmap.handle.handleImpl.handle"+form.getCenterId()+".Handle80008_"+form.getCenterId()).newInstance();
+		business.action(form, modelMap);
+		log.info("modelMap"+modelMap);
+		log.info(Constants.LOG_HEAD+"webapi80010 end.");
+		return "";
+	}
 
 
 

@@ -237,7 +237,7 @@ public class AppApi00230Contorller {
     			return ;
     		}
 
-    @RequestMapping("/.{ext}")
+    @RequestMapping("/appapi00237.{ext}")
     public void appapi00237(AppApi030Form form,AppApi00225Form form1, ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) throws Exception {
         log.info("长三角异地缴存证明明细打印核心调用");
         log.info(Constants.LOG_HEAD + "api/appApi00237 begin.");

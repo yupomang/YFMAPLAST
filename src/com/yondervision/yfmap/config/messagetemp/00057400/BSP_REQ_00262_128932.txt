@@ -4,7 +4,7 @@
 <BrcCode>05740008</>
 <TranIP>[@getVariable,clientIp,30,0,0@]</>
 <STimeStamp>[@getVariable,sendTime,30,0,0@]</>
-<TranCode>115527</>
+<TranCode>128932</>
 <TranChannel>00</>
 <TranDate>[@getVariable,tranDate,30,0,0@]</>
 <ChannelSeq>0000</>
@@ -16,7 +16,7 @@
 <AuthCode1>[@getVariable,tellcode,30,0,0@]</>
 
 <spt_bfhkfs>[@getVariable,spt_bfhkfs,4,0,0@]</>
-<spt_gjjzhhkje>[@getVariable,spt_gjjzhhkje,10,2,0@]</>
+<spt_gjjzhhkje>[@getVariable,spt_gjjzhhkje,100,0,0@]</>
 <spt_hkfs>[@getVariable,spt_hkfs,4,0,0@]</>
 <spt_jgh>[@getVariable,spt_jgh,14,0,0@]</>
 <spt_jkhtbh>[@getVariable,spt_jkhtbh,30,0,0@]</>
@@ -35,9 +35,9 @@
 <spt_sjrxm>[@getVariable,spt_sjrxm,20,0,0@]</>
 <spt_sqrlx>[@getVariable,spt_sqrlx,4,0,0@]</>
 <spt_sqsj>[@getVariable,spt_sqsj,19,0,0@]</>
-<spt_tqhkbj>[@getVariable,spt_tqhkbj,10,2,0@]</>
-<spt_tqhkje>[@getVariable,spt_tqhkje,10,2,0@]</>
-<spt_tqhklx>[@getVariable,spt_tqhklx,10,2,0@]</>
+<spt_tqhkbj>[@getVariable,spt_tqhkbj,100,0,0@]</>
+<spt_tqhkje>[@getVariable,spt_tqhkje,100,0,0@]</>
+<spt_tqhklx>[@getVariable,spt_tqhklx,100,0,0@]</>
 <spt_xm>[@getVariable,spt_xm,20,0,0@]</>
 <spt_ywbh>[@getVariable,spt_ywbh,21,0,0@]</>
 <spt_ywbm>[@getVariable,spt_ywbm,16,0,0@]</>

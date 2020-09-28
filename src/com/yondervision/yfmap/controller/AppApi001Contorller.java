@@ -3092,7 +3092,7 @@ public class AppApi001Contorller {
         log.info("rlrz 开始认证人脸识别");
 
 //        HttpClient httpClient = new DefaultHttpClient();
-        org.apache.http.client.HttpClient httpClient = null;
+       // org.apache.http.client.HttpClient httpClient = null;
 
         HttpPost post = new HttpPost(url);
         log.info("rlrz2 开始认证人脸识别");
@@ -3102,7 +3102,8 @@ public class AppApi001Contorller {
         post.setHeader("Content-type", "application/json");
         log.info("rlrz3 开始认证人脸识别");
         try {
-            httpClient = new SSLClient();
+            //httpClient = new SSLClient();
+            CloseableHttpClient httpClient = HttpClients.createDefault();
             HttpResponse response2 = httpClient.execute(post);
             String result = EntityUtils.toString(response2.getEntity());
             System.out.println("rlrz result=" + result);

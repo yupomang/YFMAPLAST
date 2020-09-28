@@ -112,7 +112,7 @@ public class YDFilter implements Filter {
 					  ||path.startsWith("/appapi00214")||path.startsWith("/appapi00215")||path.startsWith("/appapi00216")||path.startsWith("/appapi00217")||path.startsWith("/appapi00218")
 					  ||path.startsWith("/appapi00219")||path.startsWith("/appapi00220")||path.startsWith("/appapi10002")||path.startsWith("/appapi00221")
 					  ||path.startsWith("/appapi00222")||path.startsWith("/appapi00223")||path.startsWith("/appapi00224")||path.startsWith("/appapi00225")||path.startsWith("/appapi00226")
-					  ||path.startsWith("/appapi00227")||path.startsWith("/appapi00229")||path.startsWith("/")||path.startsWith("/appapi00234")||path.startsWith("/appapi00236")||path.startsWith("/appapi00237")
+					  ||path.startsWith("/appapi00227")||path.startsWith("/appapi00229")||path.startsWith("/appapi00233")||path.startsWith("/appapi00234")||path.startsWith("/appapi00236")||path.startsWith("/appapi00237")
 					  ||path.startsWith("/appapi00250")||path.startsWith("/appapi00251")||path.startsWith("/appapi00252")||path.startsWith("/appapi00253")||path.startsWith("/appapi00254")||path.startsWith("/appapi00255")
 			 )
 			 {

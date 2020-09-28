@@ -64,7 +64,7 @@ public class Handle00121_00057400 implements CtrlHandleInter {
 //				form.setClientIp(aes.decrypt(form.getClientIp()));
 			}
 
-			if((!form.getChannel().trim().equals("40"))&&(!form.getChannel().trim().equals("92"))&&(!form.getChannel().trim().equals("96"))&&(!form.getChannel().trim().equals("52"))&&(!form.getChannel().trim().equals("91")))
+			if((!form.getChannel().trim().equals("40"))&&(!form.getChannel().trim().equals("92"))&&(!form.getChannel().trim().equals("96"))&&(!form.getChannel().trim().equals("52"))&&(!form.getChannel().trim().equals("91")) && !form.getChannel().trim().equals("53"))
 			{
 				form.setChannelSeq(form.getSendSeqno());
 				form.setTellCode("9999");

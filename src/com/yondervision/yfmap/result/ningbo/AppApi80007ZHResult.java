@@ -107,6 +107,7 @@ public class AppApi80007ZHResult {
 	private String spt_datacount="";//总结果记录数
 	private String stdata="";//省厅下传数据
 	private String spt_ywid="";//业务申请唯一标识码
+	private String spt_jcye="";//个人公积金缴存余额
 
 	public String getRsufilename() {
 		return this.rsufilename;
@@ -146,6 +147,14 @@ public class AppApi80007ZHResult {
 
 	public void setSpt_ywid(final String spt_ywid) {
 		this.spt_ywid = spt_ywid;
+	}
+
+	public String getSpt_jcye() {
+		return this.spt_jcye;
+	}
+
+	public void setSpt_jcye(final String spt_jcye) {
+		this.spt_jcye = spt_jcye;
 	}
 }
 

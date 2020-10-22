@@ -80,6 +80,7 @@ public class Handle00261_00057400 implements CtrlHandleInter {
                 modelMap.put("spt_datacount", app80007ZHResult.getSpt_datacount());
                 modelMap.put("stdata", app80007ZHResult.getStdata());
                 modelMap.put("spt_ywid", app80007ZHResult.getSpt_ywid());
+                modelMap.put("spt_jcye",app80007ZHResult.getSpt_jcye());
                 return modelMap;
             }
         }

@@ -25,6 +25,7 @@
 <spt_success>[@setVariable,spt_success,20,0,0@]</>
 <spt_ywid>[@setVariable,spt_ywid,200,0,0@]</>
 <stdata>[@setVariable,stdata,8000,0,0@]</>
+<spt_jcye>[@setVariable,spt_jcye,20,0,0@]</>
 
 
 

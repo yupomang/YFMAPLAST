@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yondervision.yfmap.common.security.*;
+import com.yondervision.yfmap.util.*;
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -49,15 +50,6 @@ import com.yondervision.yfmap.form.AppApi030Form;
 import com.yondervision.yfmap.form.AppApi50001Form;
 import com.yondervision.yfmap.form.AppApi50004Form;
 import com.yondervision.yfmap.handle.CtrlHandleInter;
-import com.yondervision.yfmap.util.BeanUtil;
-import com.yondervision.yfmap.util.CommonUtil;
-import com.yondervision.yfmap.util.DES3;
-import com.yondervision.yfmap.util.ExchangeHttpClient;
-import com.yondervision.yfmap.util.HttpClientCallSoapUtil;
-import com.yondervision.yfmap.util.ImgTools;
-import com.yondervision.yfmap.util.PropertiesReader;
-import com.yondervision.yfmap.util.PublicDatasTokenUtil;
-import com.yondervision.yfmap.util.ShiJiPublicDatasTokenUtil;
 
 @Controller
 public class AppApi001Contorller {
@@ -3103,16 +3095,17 @@ public class AppApi001Contorller {
         log.info("rlrz3 开始认证人脸识别");
         try {
             //httpClient = new SSLClient();
-            CloseableHttpClient httpClient = HttpClients.createDefault();
-            HttpResponse response2 = httpClient.execute(post);
-            String result = EntityUtils.toString(response2.getEntity());
-            System.out.println("rlrz result=" + result);
-            log.info("rlrz4 可信身份认证接口" + result);
+            //CloseableHttpClient httpClient = HttpClients.createDefault();
+            //HttpResponse response2 = httpClient.execute(post);
+            //String result = EntityUtils.toString(response2.getEntity());
+            String result1 = HttpsUtils.post(url, postjson, "utf-8");
+            System.out.println("rlrz result=" + result1);
+            log.info("rlrz4 可信身份认证接口" + result1);
             long endTime = System.currentTimeMillis();
             long Time = endTime - starTime;
             System.out.println("请求可信身份认证接口耗时" + Time + "毫秒");
             System.out.println("可信身份认证接口 cost " + Time + "milliseconds");
-            JSONObject json = JSONObject.fromObject(result);
+            JSONObject json = JSONObject.fromObject(result1);
             if (json.get("code").equals("00")) {
                 json.put("recode", "000000");
             }

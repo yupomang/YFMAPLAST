@@ -5,5 +5,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/lib"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lib1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hutool-core-4.0.6"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes/production/YFMAP"/>
 </classpath>

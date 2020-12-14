@@ -2,7 +2,7 @@ package com.yondervision.yfmap.form;
 
 
 /**
-* @ClassName: AppApi00237Form
+* @ClassName: Form
 * @Description: 长三角异地缴存证明明细打印
 * @author luolin
 * @date 2020-04-22

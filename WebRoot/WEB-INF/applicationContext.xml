@@ -10,4 +10,11 @@
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
 	<context:annotation-config />
+	<bean id="executableClient" class="com.alibaba.xxpt.gateway.shared.client.http.ExecutableClient" factory-method="getInstance"
+		  init-method="init" destroy-method="destroy">
+		<property name="protocal" value="https"></property>
+		<property name="domainName" value="openplatform.ding.zj.gov.cn"></property>
+		<property name="accessKey" value="zwoa_nbgjj_yjs-Qhesv4RANbuERri"></property>
+		<property name="secretKey" value="nIw5clfz4ON00JU912KS8rI29J5H33t4Cq687vA3"></property>
+	</bean>
 </beans>

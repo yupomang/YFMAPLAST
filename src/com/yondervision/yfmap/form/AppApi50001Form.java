@@ -234,6 +234,7 @@ public class AppApi50001Form extends AppApiCommonForm {
 	private String kprqz;//开票日期止
 	private String nsrsbh;//纳税人识别号
 	private String kprqq;//开票日期起
+	private String dzsphm; //电子税票号码
 	
 	private String companyName;//企业名称
 	private String registerNo;//营业执照注册号
@@ -379,8 +380,48 @@ public class AppApi50001Form extends AppApiCommonForm {
 		this.checkflag = checkflag;
 	}
 
+	//宁波公务员最多跑一次接口
+	private String procInsId;
 
-	//===========  株洲新加================
+	private String loginWorkNo;
+
+	private String remark;
+
+	private String action;
+
+	public String getProcInsId() {
+		return this.procInsId;
+	}
+
+	public void setProcInsId(String procInsId) {
+		this.procInsId = procInsId;
+	}
+
+	public String getLoginWorkNo() {
+		return this.loginWorkNo;
+	}
+
+	public void setLoginWorkNo(String loginWorkNo) {
+		this.loginWorkNo = loginWorkNo;
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public String getAction() {
+		return this.action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+
+//===========  株洲新加================
 	/** 自定义用户名*/
 	private String zdyyhm = "";	
 	/** 序号*/
@@ -1644,6 +1685,14 @@ public class AppApi50001Form extends AppApiCommonForm {
 
 	public void setNsrsbh(String nsrsbh) {
 		this.nsrsbh = nsrsbh;
+	}
+
+	public String getDzsphm() {
+		return this.dzsphm;
+	}
+
+	public void setDzsphm(String dzsphm) {
+		this.dzsphm = dzsphm;
 	}
 
 	public String getKprqq() {

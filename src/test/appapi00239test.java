@@ -67,7 +67,7 @@ public class appapi00239test {
         return apiResult;
     }
 
-
+    //zhangjie
 
    /* private static void trustAllHttpsCertificates() throws Exception {
         javax.net.ssl.TrustManager[] trustAllCerts = new javax.net.ssl.TrustManager[1];

@@ -104,7 +104,7 @@ public class ZipUtils {
 		FileInputStream fis = new FileInputStream(zfile);
 		Charset charset = Charset.forName("GBK");// 默认UTF-8
 		// CheckedInputStream cis = new CheckedInputStream(fis,new CRC32());
-		ZipInputStream zis = new ZipInputStream(fis, charset);// 输入源zip路径
+		ZipInputStream zis = new ZipInputStream(fis);// 输入源zip路径
 		ZipEntry entry = null;
 		BufferedOutputStream bos = null;
 		while ((entry = zis.getNextEntry()) != null) {
@@ -159,7 +159,7 @@ public class ZipUtils {
 		String Parent = zfile.getParent() + "/";
 		// 设置,默认是UTF-8
 		Charset charset = Charset.forName("GBK");
-		java.util.zip.ZipFile zip = new java.util.zip.ZipFile(zipfile, charset);
+		java.util.zip.ZipFile zip = new java.util.zip.ZipFile(zfile, 10);
 		ZipEntry entry = null;
 		// 封装解压后的路径
 		BufferedOutputStream bos = null;

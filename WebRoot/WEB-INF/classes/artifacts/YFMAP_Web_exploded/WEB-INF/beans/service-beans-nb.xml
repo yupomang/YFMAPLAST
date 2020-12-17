@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="AppApi801ServiceImpl" class="com.yondervision.yfmap.service.impl.AppApi801ServiceImpl">
+		<property name="ghDwxxDao" ref="ghDwxxDao"/>
+		<property name="gjDwzhDAO" ref="gjDwzhDAO"/>
+		<property name="gjGtdwyjcDAO" ref="gjGtdwyjcDAO"/>
+		<property name="gjDwzhmxDAO" ref="gjDwzhmxDAO"/>
+		<property name="gjDwndjsDAO" ref="gjDwndjsDAO"/>
+	</bean>
+	 
+	<bean id="AppApi802ServiceImpl" class="com.yondervision.yfmap.service.impl.AppApi802ServiceImpl">
+		<property name="daGrjbDAO" ref="daGrjbDAO"/>
+		<property name="gjGrzhDAO" ref="gjGrzhDAO"/>
+		<property name="gjGrmxDAO" ref="gjGrmxDAO"/>
+		<property name="xdSpxxDAO" ref="xdSpxxDAO"/>
+	</bean>
+	
+	<!-- 
+	<bean id="commonUtil" class="com.yondervision.yfmap.util.CommonUtil">	    
+	    <property name="cmi008Dao" ref="cmi008Dao" />
+	</bean>
+	 -->
+</beans>

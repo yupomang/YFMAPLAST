@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>87</msgtype>
+		<tr_code>X00017</tr_code>
+		<corp_no>00053100</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>		
+		<gjjzh>[@setVariable,surplusAccount,100,0,0@]</gjjzh>
+   		<loannum>[@setVariable,loannum,50,0,0@]</loannum>
+   		<loanflag>[@setVariable,loanflag,50,0,0@]</loanflag>
+   		<relphone>[@setVariable,phoneNumber,50,0,0@]</relphone>
+   		<bank>[@setVariable,bankName,50,0,0@]</bank>
+   		<bankaccname>[@setVariable,bankAccname,100,0,0@]</bankaccname>
+   		<certinum>[@setVariable,bankIdcard,50,0,0@]</certinum>
+   		<qyzt>[@setVariable,signStatus,50,0,0@]</qyzt>
+   		<tqlx>[@setVariable,drawSignType,50,0,0@]</tqlx>
+   		<bankcardno>[@setVariable,bankNumber,50,0,0@]</bankcardno>
+	</body>
+</root>

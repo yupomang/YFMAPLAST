@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>76</msgtype>
+		<tr_code>X00006</tr_code>
+		<corp_no>00053100</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>
+		<dqys>[@setVariable,thisys,10,0,0@]</dqys>
+		<dqysjls>[@setVariable,thisnum,10,0,0@]</dqysjls>
+		<zjls>[@setVariable,sumnum,10,0,0@]</zjls>
+		<zys>[@setVariable,sumys,10,0,0@]</zys>
+		<hkze>[@setVariable,hkze,100,0,0@]</hkze>
+		<yhbjhj>[@setVariable,yhbjhj,100,0,0@]</yhbjhj>
+		<yhlxhj>[@setVariable,yhlxhj,100,0,0@]</yhlxhj>
+		<yhfxhj>[@setVariable,yhfxhj,100,0,0@]</yhfxhj>
+		<syqs>[@setVariable,syqs,100,0,0@]</syqs>
+		<detail details="6">
+   			<ywrq>[@setVariable,0,20,0,0@]</ywrq>
+			<ywlx>[@setVariable,1,100,0,0@]</ywlx>
+			<bjje>[@setVariable,2,18,0,0@]</bjje>
+			<lxje>[@setVariable,3,18,0,0@]</lxje>
+			<fxje>[@setVariable,4,18,0,0@]</fxje>
+			<qs>[@setVariable,5,18,0,0@]</qs>
+		</detail>
+	</body>
+</root>

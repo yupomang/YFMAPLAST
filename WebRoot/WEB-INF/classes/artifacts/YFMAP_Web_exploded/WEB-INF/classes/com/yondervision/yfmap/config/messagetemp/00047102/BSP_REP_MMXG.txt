@@ -1,0 +1,27 @@
+<flag>0</>
+<TellCode>0000</>
+<ChkCode>0000</>
+<BrcCode>00000000</>
+<TranIP>10.22.21.26</>
+<STimeStamp>2013-07-24 09:55:28:966000</>
+<TranCode>142807</>
+<TranChannel>00</>
+<TranDate>2014-12-11</>
+<ChannelSeq>398243</>
+<MTimeStamp>2013-07-24 09:55:28:967000</>
+<AuthFlag>0</>
+<AuthCode1>IVR0</>
+<AuthCode2>IVR0</>
+<AuthCode3>IVR0</>
+<RspCode>[@setVariable,recode,10,0,0@]</>
+<RspMsg>[@setVariable,msg,100,0,0@]</>
+<NoteMsg></>
+<TranSeq>90</>
+<BusiSeq>4453</>
+<accnum>[@setVariable,accnum,100,0,0@]</>
+<accname>[@setVariable,accname,100,0,0@]</>
+<certinum>[@setVariable,certinum,100,0,0@]</>
+<freeuse1>[@setVariable,freeuse1,100,0,0@]</>
+<freeuse2>[@setVariable,freeuse2,100,0,0@]</>
+<freeuse3>[@setVariable,freeuse3,100,0,0@]</>
+<freeuse4>[@setVariable,freeuse4,100,0,0@]</>

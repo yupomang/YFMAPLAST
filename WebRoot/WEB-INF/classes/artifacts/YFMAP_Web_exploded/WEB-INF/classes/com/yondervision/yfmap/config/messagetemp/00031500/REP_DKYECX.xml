@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>75</msgtype>
+		<tr_code>X00005</tr_code>
+		<corp_no>00031500</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>		
+   		<dkzh>[@setVariable,loanaccnum,100,0,0@]</dkzh>
+   		<hkfs>[@setVariable,repaymode,100,0,0@]</hkfs>
+   		<ztbz>[@setVariable,ztbz,100,0,0@]</ztbz>
+   		<jqbz>[@setVariable,jqbz,100,0,0@]</jqbz>
+   		<fkrq>[@setVariable,fkrq,100,0,0@]</fkrq>
+   		<dqrq>[@setVariable,jqrq,100,0,0@]</dqrq>
+   		<dkje>[@setVariable,loanamt,100,0,0@]</dkje>
+   		<dqye>[@setVariable,loanbal,100,0,0@]</dqye>
+   		<yqqs>[@setVariable,overdueterms,100,0,0@]</yqqs>
+   		<yeje>[@setVariable,overdueamt,100,0,0@]</yeje>
+   		<fwdz>[@setVariable,gfdz,200,0,0@]</fwdz>
+   		<jkrxm>[@setVariable,loanaccname,100,0,0@]</jkrxm>
+   		<jkrzjh>[@setVariable,zjhm,100,0,0@]</jkrzjh>
+   		<gtjkrxm>[@setVariable,gtjkrxm,100,0,0@]</gtjkrxm>
+   		<gtjkrzjh>[@setVariable,gtjkrzjh,100,0,0@]</gtjkrzjh>   		
+	</body>
+</root>

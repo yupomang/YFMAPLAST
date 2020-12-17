@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<root>
+		<head>
+			<transCode>119012</transCode>
+			<sendDate>[@getVariable,sendDate,10,0,0@]</sendDate>
+			<sendTime>[@getVariable,sendTime,8,0,0@]</sendTime>
+			<sendSeqno>[@getVariable,sendSeqno,50,0,0@]</sendSeqno>
+			<key>[@getVariable,key,8,0,0@]</key>
+			<buzType>5017</buzType>
+		</head>
+		<body>
+			<loanamt>[@getVariable,dkje,30,0,0@]</loanamt>
+			<loanterm>[@getVariable,dknx,30,0,0@]</loanterm>
+			<repaymode>[@getVariable,hkfs,30,0,0@]</repaymode>
+			<rate1>[@getVariable,gjjdkll,30,0,0@]</rate1>
+			<rate2>[@getVariable,sydkll,30,0,0@]</rate2>
+			<freeuse1></freeuse1>
+			<freeuse2></freeuse2>
+			<freeuse3></freeuse3>
+		</body>
+	</root>

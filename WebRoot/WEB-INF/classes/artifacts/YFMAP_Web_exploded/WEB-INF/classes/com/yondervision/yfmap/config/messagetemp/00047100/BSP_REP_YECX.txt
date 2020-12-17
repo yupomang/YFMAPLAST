@@ -1,0 +1,35 @@
+<AuthCode1>IVR0</>
+<AuthCode2>IVR0</>
+<AuthCode3>IVR0</>
+<AuthFlag>0</>
+<BrcCode>00000000</>
+<BusiSeq>90</>
+<ChannelSeq>398243</>
+<ChkCode>cweb</>
+<MTimeStamp>2013-07-24 09:55:28:967000</>
+<NoteMsg></>
+<RspCode>[@setVariable,recode,10,0,0@]</>
+<RspMsg>[@setVariable,msg,100,0,0@]</>
+<STimeStamp>2013-07-24 09:55:28:966000</>
+<TellCode>cweb</>
+<TranChannel>00</>
+<TranCode>116004</>
+<TranDate>2014-12-11</>
+<TranIP>10.22.21.26</>
+<TranSeq>90</>
+<certinum>[@setVariable,frozenDate,500,0,0@]</>
+<accnum>[@setVariable,surplusAccount,500,0,0@]</>
+<accname1>[@setVariable,accountStatus,500,0,0@]</>
+<accname>[@setVariable,frozenAmount,500,0,0@]</>
+<bal>[@setVariable,accountBalance,2000,0,0@]</>
+<basenum>[@setVariable,paymentBase,500,0,0@]</>
+<indipayamt>[@setVariable,annualPaymentSum,500,0,0@]</>
+<indipaysum>[@setVariable,carryoverAmount,500,0,0@]</>
+<indiprop>[@setVariable,personalPaymentRate,500,0,0@]</>
+<lasttransdate>[@setVariable,lastestPaymentDate,500,0,0@]</>
+<lpaym>[@setVariable,newOperationDate,500,0,0@]</>
+<opnaccdate>[@setVariable,accountOpenDate,500,0,0@]</>
+<unitaccname>[@setVariable,companyName,500,0,0@]</>
+<unitaccnum>[@setVariable,companyAccount,500,0,0@]</>
+<unitpayamt>[@setVariable,accountOrganization,500,0,0@]</>
+<unitprop>[@setVariable,companyPaymentRate,500,0,0@]</>

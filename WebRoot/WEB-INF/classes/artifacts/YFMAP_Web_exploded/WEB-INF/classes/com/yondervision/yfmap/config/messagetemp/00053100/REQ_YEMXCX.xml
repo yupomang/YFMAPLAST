@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>0</reqflag>
+		<msgtype>73</msgtype>
+		<tr_code>X00003</tr_code>
+		<corp_no>00053100</corp_no>
+		<user_no>8888</user_no>
+		<req_no>[@getVariable,sendSeqno,100,0,0@]</req_no>
+		<oreq_no>1</oreq_no>
+		<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+		<channel>28</channel>
+		<sign>28</sign>
+		<key>1</key>
+		<reserved>1</reserved>			
+	</head>
+	<body>
+		<gjjzh>[@getVariable,surplusAccount,50,0,0@]</gjjzh>
+		<yxsjls>[@getVariable,pagerows,50,0,0@]</yxsjls>
+		<ys>[@getVariable,pagenum,50,0,0@]</ys>
+		<startdate>[@getVariable,startdate,50,0,0@]</startdate>
+		<enddate>[@getVariable,enddate,50,0,0@]</enddate>				
+	</body>
+</root>

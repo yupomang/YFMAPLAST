@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>
+		<tr_code>430406</tr_code>
+		<serial_no></serial_no>
+		<tr_acdt>[@getVariable,sendDate,8,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,6,0,0@]</tr_time>
+		<key></key>
+		<reserved></reserved>
+		<channel>[@getVariable,channel,1,0,0@]</channel>
+	</head>
+	<body>
+		<begdate>[@getVariable,startdate,10,0,0@]</begdate>	
+		<enddate>[@getVariable,enddate,10,0,0@]</enddate>
+		<certinum>[@getVariable,bodyCardNumber,18,0,0@]</certinum>
+	</body>
+</root>

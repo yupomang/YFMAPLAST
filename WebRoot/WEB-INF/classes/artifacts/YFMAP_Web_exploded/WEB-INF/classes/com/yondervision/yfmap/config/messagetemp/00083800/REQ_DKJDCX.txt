@@ -1,0 +1,17 @@
+<flag>0</>
+<TellCode>8888</>
+<ChkCode>1231</>
+<BrcCode>00000000</>
+<TranIP>192.168.10.20</>
+<STimeStamp>[@getVariable,sendTime,30,0,0@]</>
+<TranCode>430026</>
+<TranChannel>00</>
+<TranDate>[@getVariable,sendDate,10,0,0@]</>
+<ChannelSeq>398243</>
+<MTimeStamp>[@getVariable,sendTime,30,0,0@]</>
+<AuthFlag>1231</>
+<AuthCode2>1231</>
+<AuthCode3>1231</>
+<AuthCode1>1231</>
+<tranflag1>1</>
+<certinum>[@setVariable,certinum,50,0,0@]</>

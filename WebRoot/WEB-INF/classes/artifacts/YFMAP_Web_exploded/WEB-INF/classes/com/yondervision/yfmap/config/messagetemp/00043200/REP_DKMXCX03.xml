@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<root>
+		<head>	
+			<tr_code>C040005</tr_code>
+			<corp_no>1001</corp_no>
+			<req_no>1</req_no>
+			<serial_no>1</serial_no>
+			<ans_no></ans_no>
+			<next_no></next_no>
+			<tr_acdt></tr_acdt>
+			<tr_time></tr_time>
+			<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+			<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+			<particular_code></particular_code>
+			<atom_tr_count>1</atom_tr_count>
+			<reserved></reserved>
+			<particular_info></particular_info>
+		</head>
+		<body>
+			<loancontrnum></loancontrnum>
+			<accname></accname>
+			<cerid1></cerid1>
+			<detail details="6">
+				<seqnum>[@setVariable,0,10,0,0@]</seqnum>
+				<enddate>[@setVariable,1,30,0,0@]</enddate>
+				<planprin>[@setVariable,2,20,0,0@]</planprin>
+				<planint>[@setVariable,3,20,0,0@]</planint>
+				<oweprin>[@setVariable,4,20,0,0@]</oweprin>
+				<oweint>[@setVariable,5,20,0,0@]</oweint>
+			</detail>
+		</body>
+	</root>			

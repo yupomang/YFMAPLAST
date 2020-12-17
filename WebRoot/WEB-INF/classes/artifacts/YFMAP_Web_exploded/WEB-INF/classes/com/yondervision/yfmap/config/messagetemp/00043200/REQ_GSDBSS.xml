@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+<head>
+<tr_code>B00008</tr_code>
+<corp_no>1001</corp_no>
+<req_no>[@getVariable,sendSeqno,50,0,0@]</req_no>
+<serial_no>1</serial_no>
+<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+<atom_tr_count>1</atom_tr_count>
+<channel>1</channel>
+</head>
+<body>
+<apprloansum>[@getVariable,totalincome,18,0,0@]</apprloansum>
+<apprloanterm>[@getVariable,loanterm,30,0,0@]</apprloanterm>
+<secloanflag>[@getVariable,housetype,30,0,0@]</secloanflag>
+<sdrate>[@getVariable,loanmonpay1,18,0,0@]</sdrate>
+<gdrate>[@getVariable,loanmonpay2,18,0,0@]</gdrate>
+</body>
+</root>

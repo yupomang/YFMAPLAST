@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<root>
+		<head>	
+			<transCode>430010</transCode>
+			<recvDate>[@setVariable,sendDate,10,0,0@]</recvDate>		
+			<recvTime>[@setVariable,sendTime,8,0,0@]</recvTime>
+			<sendSeqno>[@setVariable,sendSeqno,50,0,0@]</sendSeqno>
+			<key>[@setVariable,key,8,0,0@]</key>
+			<centerSeqno>[@setVariable,centerSeqno,30,0,0@]</centerSeqno>
+			<recode>[@setVariable,recode,6,0,0@]</recode>
+			<msg>[@setVariable,msg,100,0,0@]</msg>
+		</head>
+		<body>
+				<transdate>[@setVariable,apprfDate,18,0,0@]</transdate>
+				<apprflag>[@setVariable,apprflag,30,0,0@]</apprflag>
+				<apprmsg>[@setVariable,apprMsg,30,0,0@]</apprmsg>
+			<freeuse1>[@setVariable,freeuse1,50,0,0@]</freeuse1>
+			<freeuse2>[@setVariable,freeuse2,100,0,0@]</freeuse2>
+			<freeuse3>[@setVariable,freeuse3,200,0,0@]</freeuse3>
+		</body>
+	</root>			

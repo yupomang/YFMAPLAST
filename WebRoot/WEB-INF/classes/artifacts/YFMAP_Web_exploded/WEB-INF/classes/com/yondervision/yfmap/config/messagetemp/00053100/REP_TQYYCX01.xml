@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>83</msgtype>
+		<tr_code>X00013</tr_code>
+		<corp_no>00053100</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,50,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,10,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>		
+		<gjjzh>[@setVariable,surplusAccount,100,0,0@]</gjjzh>
+   		<grxm>[@setVariable,fullName,50,0,0@]</grxm>
+   		<zjlx>[@setVariable,idcardType,50,0,0@]</zjlx>
+   		<zjhm>[@setVariable,idcardNumber,50,0,0@]</zjhm>
+   		<zhzt>[@setVariable,accountStatus,50,0,0@]</zhzt>
+   		<djbz>[@setVariable,freezingMark,100,0,0@]</djbz>
+   		<zhye>[@setVariable,balance,50,0,0@]</zhye>
+   		<gjjkhyh>[@setVariable,gjjBankName,50,0,0@]</gjjkhyh>
+   		<sjh>[@setVariable,phoneNumber,50,0,0@]</sjh>
+   		<yhkkhh>[@setVariable,bankName,50,0,0@]</yhkkhh>
+   		<yhkzhm>[@setVariable,bankAccname,100,0,0@]</yhkzhm>
+   		<yhkzjhm>[@setVariable,bankIdcard,50,0,0@]</yhkzjhm>
+   		<qyyhkh>[@setVariable,bankNumber,50,0,0@]</qyyhkh>
+   		<qyzt>[@setVariable,signStatus,50,0,0@]</qyzt>
+   		<tqlx>[@setVariable,drawSignType,50,0,0@]</tqlx>
+	</body>
+</root>

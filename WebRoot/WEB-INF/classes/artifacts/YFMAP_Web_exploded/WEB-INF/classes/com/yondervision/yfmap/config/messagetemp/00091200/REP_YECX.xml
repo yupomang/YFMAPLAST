@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>
+		<tr_code>430402</tr_code>
+		<corp_no></corp_no>
+		<req_no></req_no>
+		<serial_no></serial_no>
+		<ans_no></ans_no>
+		<next_no></next_no>
+		<tr_acdt></tr_acdt>
+		<tr_time></tr_time>
+		<ans_code>[@setVariable,recode,2,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,80,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<atom_tr_count></atom_tr_count>
+		<reserved></reserved>
+		<particular_info></particular_info>
+	</head>
+	<body>
+		<accname>[@setVariable,accname,40,0,0@]</accname>
+		<accnum>[@setVariable,surplusAccount,12,0,0@]</accnum>
+		<bal>[@setVariable,accountBalance,18,0,0@]</bal>
+		<dac>[@setVariable,smstatus,16,0,0@]</dac>		
+		<freeuse1>[@setVariable,accountStatus,40,0,0@]</freeuse1>
+		<lasttransdate>[@setVariable,newOperationDate,10,0,0@]</lasttransdate>
+		<lpaym>[@setVariable,lastestPaymentDate,6,0,0@]</lpaym>
+		<monpaysum>[@setVariable,monpaysum,16,0,0@]</monpaysum>
+		<unitaccname>[@setVariable,companyName,128,0,0@]</unitaccname>
+		<unitaccnum>[@setVariable,companyAccount,12,0,0@]</unitaccnum>
+	</body>
+</root>

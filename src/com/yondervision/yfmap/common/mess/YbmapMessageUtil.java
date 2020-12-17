@@ -133,22 +133,22 @@ public class YbmapMessageUtil {
 //		StringEntity entity;
 		String msg="";
 		try {
-			PostMethod mypost = new PostMethod(url);
-			mypost.addRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+			PostMethod mypost = new PostMethod(url);//post方法
+			mypost.addRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");//添加请求头
 			//参数设置
-			Set<String> keySet = data.keySet();
-			NameValuePair[] postData = new NameValuePair[keySet.size()];
+			Set<String> keySet = data.keySet();//返回map中所有key值的列表
+			NameValuePair[] postData = new NameValuePair[keySet.size()];//设置长度为size的数组
 			int index=0;
 			
 			StringBuffer headpara = new StringBuffer();
 			StringBuffer headparaMD5 = new StringBuffer();
 			int num=0;
 			
-			for(String key:keySet){				
-				postData[index++] = new NameValuePair(key,(CommonUtil.isEmpty((String)data.get(key))?"":(String)data.get(key)));
+			for(String key:keySet){	//取出所有key值
+				postData[index++] = new NameValuePair(key,(CommonUtil.isEmpty((String)data.get(key))?"":(String)data.get(key)));//设置postData所有键值对
 				if(num==0){
-					headpara.append(key);
-					headparaMD5.append(key+"="+(CommonUtil.isEmpty((String)data.get(key))?"":(String)data.get(key)));
+					headpara.append(key);//储存所有key值
+					headparaMD5.append(key+"="+(CommonUtil.isEmpty((String)data.get(key))?"":(String)data.get(key)));//键值作为数组存进headparaMD5字符串里
 				}else{
 					headpara.append(","+key);
 					headparaMD5.append("&"+key+"="+(CommonUtil.isEmpty((String)data.get(key))?"":(String)data.get(key)));
@@ -156,23 +156,24 @@ public class YbmapMessageUtil {
 				num++;
 			}
 			
-			
+			//把值的String headparaMD5进行RSA签名加密
 			String paraMD5 = RSASignature.sign(EncryptionByMD5.getMD5(headparaMD5.toString().getBytes("UTF-8")), RSASignature.RSA_PRIVATE);//EncryptionByMD5.getMD5(headparaMD5.toString().getBytes("UTF-8"));
 			
-			mypost.setRequestHeader("headpara", headpara.toString());
-			mypost.setRequestHeader("headparaMD5", paraMD5);
+			mypost.setRequestHeader("headpara", headpara.toString());//把健String headpara设置进请求头
+			mypost.setRequestHeader("headparaMD5", paraMD5);//把加密后的值String paraMD5设置进请求头
 			System.out.println("#########发往YBMAPZH headpara :"+headpara.toString());
 			System.out.println("#########发往YBMAPZH headparaMD5 :"+paraMD5);
-			byte[] keySigndata = paraMD5.getBytes();		
-			String keysig = Base64Encoder.encode(KeySignature.keySign(keySigndata));			
-			mypost.setRequestHeader("KeySignature", keysig.replaceAll("\n", ""));			
+			byte[] keySigndata = paraMD5.getBytes();//把加密后的值String paraMD5转变为数组
+			String keysig = Base64Encoder.encode(KeySignature.keySign(keySigndata));//Base64加密
+			mypost.setRequestHeader("KeySignature", keysig.replaceAll("\n", ""));//替换keysig里\n为空字符串
 			
 			
-			mypost.addParameters(postData);
+			mypost.addParameters(postData);//请求参数里添加所有键值对数组为参数
 			HttpClient httpClient = new HttpClient();		
 			
 			String req = "";
-			int re_code = httpClient.executeMethod(mypost);
+			System.out.println(url);
+			int re_code = httpClient.executeMethod(mypost);//执行post请求
 			
 			if (re_code == 200) {
 				msg = mypost.getResponseBodyAsString();

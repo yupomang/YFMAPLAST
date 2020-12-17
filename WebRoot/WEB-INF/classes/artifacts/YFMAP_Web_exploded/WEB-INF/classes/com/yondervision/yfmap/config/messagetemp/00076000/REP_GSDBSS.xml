@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<root>
+		<head>	
+			<transCode>appapi401</transCode>
+			<recvDate>[@setVariable,sendDate,10,0,0@]</recvDate>		
+			<recvTime>[@setVariable,sendTime,8,0,0@]</recvTime>
+			<sendSeqno>[@setVariable,sendSeqno,50,0,0@]</sendSeqno>
+			<key>[@setVariable,key,8,0,0@]</key>
+			<centerSeqno>[@setVariable,centerSeqno,30,0,0@]</centerSeqno>
+			<recode>[@setVariable,recode,6,0,0@]</recode>
+			<msg>[@setVariable,msg,100,0,0@]</msg>
+		</head>
+		<body>
+			<sumint>[@setVariable,sumint,20,0,0@]</sumint>
+			<sumint1>[@setVariable,sumint1,20,0,0@]</sumint1>
+			<sumint2>[@setVariable,sumint2,20,0,0@]</sumint2>
+			<detail details="5">
+				<begdate>[@setVariable,0,10,0,0@]</begdate>
+				<amt>[@setVariable,1,20,0,0@]</amt>
+				<amt1>[@setVariable,1,20,0,0@]</amt1>
+				<amt2>[@setVariable,1,20,0,0@]</amt2>
+				<termnum>[@setVariable,1,20,0,0@]</termnum>
+			</detail>
+		</body>
+	</root>			

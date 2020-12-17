@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<root>
+		<head>
+			<reqflag>0</reqflag>
+			<msgtype>11</msgtype>
+			<tr_code>A00019</tr_code>
+			<corp_no>00000001</corp_no>
+			<user_no>9999</user_no>
+			<req_no>10000000001</req_no>
+			<oreq_no>10000000001</oreq_no>
+			<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+			<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+			<channel>40</channel>
+			<sign>01</sign>
+			<key>0</key>
+			<reserved>0</reserved>
+		</head>
+		<body>
+			<accnum>[@getVariable,surplusAccount,30,0,0@]</accnum>
+			<certinum>0</certinum>
+			<startdate>1989-12-31</startdate>
+			<enddate>2099-12-31</enddate>			
+			<pagenum>0</pagenum>
+			<pagerow>0</pagerow>
+		</body>
+	</root>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>		
+		<tr_code>430401</tr_code>
+		<serial_no></serial_no>
+		<tr_acdt>[@getVariable,sendDate,8,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,6,0,0@]</tr_time>
+		<key></key>
+		<reserved></reserved>
+	</head>
+	<body>
+		<certinum>[@getVariable,bodyCardNumber,20,0,0@]</certinum>
+		<pwd>[@getVariable,newpassword,30,0,0@]</pwd>
+		<accnum>[@getVariable,accnum,12,0,0@]</accnum>
+	</body>
+</root>

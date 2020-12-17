@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<mi>
+		<head>
+			<transCode>[@getVariable,transCode,10,0,0@]</transCode>
+			<recvDate>[@getVariable,sendDate,10,0,0@]</recvDate>		
+			<recvTime>[@getVariable,sendTime,10,0,0@]</recvTime>
+			<sendSeqno>[@getVariable,sendSeqno,30,0,0@]</sendSeqno>
+			<key>[@getVariable,key,8,0,0@]</key>
+			<miSeqno>[@getVariable,miSeqno,20,0,0@]</miSeqno>
+			<recode>[@getVariable,recode,10,0,0@]</recode>
+			<msg>[@getVariable,remsg,100,0,0@]</msg>
+		</head>
+		<body>
+			<filename>[@getVariable,fileName,100,0,0@]</filename>
+		</body>		
+	</mi>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>		
+		<tr_code>600002</tr_code>
+		<corp_no>494432304</corp_no>
+		<user_no></user_no>
+		<serial_no></serial_no>
+		<req_no></req_no>
+		<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+		<atom_tr_count></atom_tr_count>
+		<channel>52</channel>
+		<sign></sign>
+	</head>
+	<body>
+		<certinum>[@getVariable,bodyCardNumber,30,0,0@]</certinum>
+		<perpwd></perpwd>
+		<pwdflag>0</pwdflag>
+	</body>
+</root>

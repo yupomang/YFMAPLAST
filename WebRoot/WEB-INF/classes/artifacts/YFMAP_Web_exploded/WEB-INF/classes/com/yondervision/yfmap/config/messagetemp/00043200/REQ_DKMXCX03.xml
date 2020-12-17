@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+<head>
+<tr_code>C040005</tr_code>
+<corp_no>1001</corp_no>
+<req_no>[@getVariable,sendSeqno,50,0,0@]</req_no>
+<serial_no>1</serial_no>
+<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+<atom_tr_count>1</atom_tr_count>
+<channel>1</channel>
+</head>
+<body>
+<cerid>[@getVariable,certinum,20,0,0@]</cerid>
+<pageNo>[@getVariable,pagenum,16,0,0@]</pageNo>
+<pageSize>[@getVariable,pagerows,16,0,0@]</pageSize>
+</body>
+</root>

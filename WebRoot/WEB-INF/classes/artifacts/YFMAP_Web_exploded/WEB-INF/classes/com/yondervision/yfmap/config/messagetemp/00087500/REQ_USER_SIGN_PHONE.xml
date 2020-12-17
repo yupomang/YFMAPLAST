@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>		
+		<tr_code>150116</tr_code>
+		<serial_no></serial_no>
+		<tr_acdt>[@getVariable,sendDate,8,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,6,0,0@]</tr_time>
+		<key></key>
+		<reserved></reserved>
+	</head>
+	<body>
+		<accnum>[@getVariable,surplusAccount,12,0,0@]</accnum>
+		<certinum></certinum>
+	</body>
+</root>

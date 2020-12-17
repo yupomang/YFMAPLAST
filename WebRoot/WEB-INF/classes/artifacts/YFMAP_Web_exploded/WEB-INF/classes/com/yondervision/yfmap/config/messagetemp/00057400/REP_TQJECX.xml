@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<mi>
+		<head>	
+			<transCode>appapi001</transCode>
+			<sendDate>[@setVariable,sendDate,10,0,0@]</sendDate>		
+			<sendTime>[@setVariable,sendTime,10,0,0@]</sendTime>
+			<sendSeqno>[@setVariable,sendSeqno,30,0,0@]</sendSeqno>
+			<key>[@setVariable,key,8,0,0@]</key>
+			<centerSeqno>[@setVariable,centerSeqno,4,0,0@]</centerSeqno>
+			<recode>[@setVariable,recode,6,0,0@]</recode>
+			<msg>[@setVariable,msg,100,0,0@]</msg>
+		</head>
+		<body>
+			<accnum>[@setVariable,accnum,30,0,0@]</accnum>
+			<thiscumulativesumamt>[@setVariable,thiscumulativesumamt,18,0,0@]</thiscumulativesumamt>
+			<pastcumulativesumamt>[@setVariable,pastcumulativesumamt,18,0,0@]</pastcumulativesumamt>
+			<lastdrawdate>[@setVariable,lastdrawdate,10,0,0@]</lastdrawdate>
+			<freeuse1>1</freeuse1>
+			<freeuse2>1</freeuse2>
+			<freeuse3>1</freeuse3>
+		</body>
+	</mi>			

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<root>
+	<head>
+		<reqflag>0</reqflag>
+		<msgtype>100</msgtype>
+		<tr_code>X00030</tr_code>
+		<corp_no>[@getVariable,brcCode,13,0,0@]</corp_no>
+		<user_no>[@getVariable,freeuse1,30,0,0@]</user_no>
+		<req_no>[@getVariable,sendSeqno,100,0,0@]</req_no>
+		<oreq_no>1</oreq_no>
+		<tr_acdt>[@getVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,8,0,0@]</tr_time>
+		<channel>28</channel>
+		<sign>28</sign>
+		<key>1</key>
+		<reserved>1</reserved>			
+	</head>
+	<body>
+		<gjjzh>[@getVariable,surplusAccount,50,0,0@]</gjjzh>
+		<newphone>[@getVariable,mobileNumber,100,0,0@]</newphone>
+		<type>[@getVariable,channel,100,0,0@]</type>
+		<curseq>[@getVariable,freeuse2,100,0,0@]</curseq>
+		<vercode>[@getVariable,smstmplcode,100,0,0@]</vercode>
+		<psword>[@getVariable,pwd,16,0,0@]</psword>
+		<cardno>[@getVariable,cardno,19,0,0@]</cardno>
+	</body>
+</root>

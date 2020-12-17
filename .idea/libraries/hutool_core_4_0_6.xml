@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="hutool-core-4.0.6">
+    <CLASSES>
+      <root url="jar://D:/jar/hutool-core-4.0.6.jar!/" />
+      <root url="jar://D:/jar/hutool-http-4.0.6.jar!/" />
+      <root url="jar://D:/jar/okhttp-3.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

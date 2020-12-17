@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<mi>
+		<head>
+			<transCode>[@setVariable,transCode,10,0,0@]</transCode>
+			<sendDate>[@setVariable,sendDate,10,0,0@]</sendDate>		
+			<sendTime>[@setVariable,sendTime,10,0,0@]</sendTime>
+			<sendSeqno>[@setVariable,sendSeqno,30,0,0@]</sendSeqno>
+			<key>[@setVariable,key,8,0,0@]</key>
+			<longinip>[@setVariable,longinip,20,0,0@]</longinip>
+			<buzType>[@setVariable,buzType,10,0,0@]</buzType>
+		</head>
+		<body>
+			<sendNo>[@setVariable,sendNo,30,0,0@]</sendNo>
+			<miSeqno>[@setVariable,miSeqno,10,0,0@]</miSeqno>			
+			<freeuse1>[@setVariable,freeuse1,50,0,0@]</freeuse1>
+			<freeuse2>[@setVariable,freeuse2,100,0,0@]</freeuse2>
+			<freeuse3>[@setVariable,freeuse3,200,0,0@]</freeuse3>
+		</body>
+	</mi>

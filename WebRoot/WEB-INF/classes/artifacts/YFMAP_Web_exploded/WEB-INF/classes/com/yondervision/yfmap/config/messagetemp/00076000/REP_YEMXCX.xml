@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<root>
+		<head>	
+			<transCode>119013</transCode>
+			<recvDate>[@setVariable,sendDate,10,0,0@]</recvDate>		
+			<recvTime>[@setVariable,sendTime,8,0,0@]</recvTime>
+			<sendSeqno>[@setVariable,sendSeqno,50,0,0@]</sendSeqno>
+			<key>[@setVariable,key,8,0,0@]</key>
+			<centerSeqno>[@setVariable,centerSeqno,30,0,0@]</centerSeqno>
+			<recode>[@setVariable,recode,6,0,0@]</recode>
+			<msg>[@setVariable,msg,100,0,0@]</msg>
+		</head>
+		<body>
+			<detail details="11">
+				<transdate>[@setVariable,0,10,0,0@]</transdate>
+				<unitaccnum>[@setVariable,1,255,0,0@]</unitaccnum>
+				<unitaccname>[@setVariable,2,255,0,0@]</unitaccname>
+				<accnum>[@setVariable,3,255,0,0@]</accnum>
+				<accname>[@setVariable,4,255,0,0@]</accname>
+				<amt>[@setVariable,5,255,0,0@]</amt>
+				<bal>[@setVariable,6,255,0,0@]</bal>
+				<remark>[@setVariable,7,255,0,0@]</remark>
+				<agentinstcode>[@setVariable,8,255,0,0@]</agentinstcode>
+				<agentop>[@setVariable,9,255,0,0@]</agentop>
+				<hostsernum>[@setVariable,10,255,0,0@]</hostsernum>
+				<freeuse1></freeuse1>
+				<freeuse2>0.00</freeuse2>
+				<freeuse3></freeuse3>
+			</detail>
+		</body>
+	</root>			

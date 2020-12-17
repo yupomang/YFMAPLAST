@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<root>
+		<head>
+			<reqflag>1</reqflag>
+			<msgtype></msgtype>
+			<tr_code>430409</tr_code>
+			<corp_no></corp_no>
+			<req_no></req_no>
+			<tr_acdt></tr_acdt>
+			<tr_time></tr_time>
+			<ans_code>[@setVariable,recode,1,0,0@]</ans_code>
+			<ans_info>[@setVariable,msg,80,0,0@]</ans_info>
+			<particular_code></particular_code>
+			<particular_info></particular_info>
+			<reserved></reserved>
+			<ans_no></ans_no>
+		</head>
+		<body>
+			<devname></devname>
+			<freeuse1></freeuse1>
+			<centernm></centernm>
+			<instname></instname>
+			<prominfo>[@setVariable,fileName,80,0,0@]</prominfo>
+		</body>
+	</root>	

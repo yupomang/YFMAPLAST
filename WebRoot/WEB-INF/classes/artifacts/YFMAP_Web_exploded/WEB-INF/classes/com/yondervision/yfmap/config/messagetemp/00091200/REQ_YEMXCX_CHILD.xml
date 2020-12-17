@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>
+		<tr_code>[@getVariable,transcode,6,0,0@]</tr_code>
+		<serial_no></serial_no>
+		<tr_acdt>[@getVariable,sendDate,8,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,6,0,0@]</tr_time>
+		<key></key>
+		<reserved></reserved>
+		<channel>[@getVariable,channel,1,0,0@]</channel>
+	</head>
+	<body>
+		<hostsernum>[@getVariable,transseqno,20,0,0@]</hostsernum>
+		<accnum>[@getVariable,surplusAccount,12,0,0@]</accnum>	
+		<certinum>[@getVariable,bodyCardNumber,20,0,0@]</certinum>
+		<summarycode>[@getVariable,summarycode,8,0,0@]</summarycode>
+		<transdate>[@getVariable,transdate,10,0,0@]</transdate>	
+	</body>
+</root>

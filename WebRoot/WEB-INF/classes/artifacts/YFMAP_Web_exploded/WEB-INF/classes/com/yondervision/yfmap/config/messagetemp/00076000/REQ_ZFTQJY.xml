@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding = "GBK"?>
+	<root>
+		<head>
+			<transCode>156007</transCode>
+			<sendDate>[@getVariable,sendDate,10,0,0@]</sendDate>
+			<sendTime>[@getVariable,sendTime,8,0,0@]</sendTime>
+			<sendSeqno>[@getVariable,sendSeqno,50,0,0@]</sendSeqno>
+			<key>[@getVariable,key,8,0,0@]</key>
+			<buzType>5000</buzType>
+		</head>
+		<body>
+			<accnum>[@getVariable,accnum,30,0,0@]</accnum>
+			<certinum>[@getVariable,certinum,20,0,0@]</certinum>
+			<matename>[@getVariable,inputamt,30,0,0@]</matename>
+			<matecertinum>[@getVariable,prominfo,20,0,0@]</matecertinum>
+			<accname>[@getVariable,xingming,30,0,0@]</accname>
+		</body>
+	</root>

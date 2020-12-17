@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>
+		<reqflag>1</reqflag>
+		<msgtype>71</msgtype>
+		<tr_code>X00001</tr_code>
+		<corp_no>00031300</corp_no>
+		<oreq_no>[@setVariable,sendSeqno,20,0,0@]</oreq_no>
+		<tr_acdt>[@setVariable,sendDate,10,0,0@]</tr_acdt>
+		<tr_time>[@setVariable,sendTime,8,0,0@]</tr_time>
+		<ans_code>[@setVariable,recode,6,0,0@]</ans_code>
+		<ans_info>[@setVariable,msg,100,0,0@]</ans_info>
+		<particular_code></particular_code>
+		<particular_info></particular_info>
+		<reserved></reserved>
+	</head>
+	<body>
+	    <grxm>[@setVariable,grxm,40,0,0@]</grxm>
+	    <jyrq>[@setVariable,jyrq,10,0,0@]</jyrq>
+   		<kzt>[@setVariable,zxlmkkzt,100,0,0@]</kzt>
+   		<gjjzh>[@setVariable,grzh,12,0,0@]</gjjzh>
+	</body>
+</root>

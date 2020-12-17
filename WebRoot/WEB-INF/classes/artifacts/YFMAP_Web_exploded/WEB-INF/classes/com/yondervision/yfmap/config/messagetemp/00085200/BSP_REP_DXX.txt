@@ -1,0 +1,20 @@
+<AuthCode1>IVR0</>
+<AuthCode2>IVR0</>
+<AuthCode3>IVR0</>
+<AuthFlag>0</>
+<BrcCode>00000000</>
+<BusiSeq>90</>
+<ChannelSeq>398243</>
+<ChkCode>cweb</>
+<MTimeStamp>2013-07-24 09:55:28:967000</>
+<NoteMsg></>
+<RspCode>[@setVariable,recode,10,0,0@]</>
+<RspMsg>[@setVariable,msg,100,0,0@]</>
+<STimeStamp>2013-07-24 09:55:28:966000</>
+<TellCode>cweb</>
+<TranChannel>00</>
+<TranCode>149365</>
+<TranDate>2014-12-11</>
+<TranIP>10.22.21.26</>
+<TranSeq>90</>
+<filename></>

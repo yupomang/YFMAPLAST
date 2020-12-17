@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding = "GBK"?>
+<root>
+	<head>		
+		<tr_code>150112</tr_code>
+		<serial_no></serial_no>
+		<tr_acdt>[@getVariable,sendDate,8,0,0@]</tr_acdt>
+		<tr_time>[@getVariable,sendTime,6,0,0@]</tr_time>
+		<key></key>
+		<reserved></reserved>
+	</head>
+	<body>
+		<accnum>[@getVariable,surplusAccount,12,0,0@]</accnum>
+		<verificationcode>[@getVariable,checkid,6,0,0@]</verificationcode>
+		<unitaccnum>[@getVariable,unitaccnum,12,0,0@]</unitaccnum>
+		<bankaccnm>[@getVariable,bankaccnm,128,0,0@]</bankaccnm>
+		<bankaccnum>[@getVariable,bankaccnum,30,0,0@]</bankaccnum>
+		<bankcode>[@getVariable,bankcode,4,0,0@]</bankcode>
+		<phone>[@getVariable,mobileNumber,20,0,0@]</phone>
+		<settlemode>[@getVariable,settlemode,1,0,0@]</settlemode>
+		<drawamt>[@getVariable,drawamt,20,0,0@]</drawamt>
+		<drawreason>[@getVariable,drawreason,3,0,0@]</drawreason>
+	</body>
+</root>

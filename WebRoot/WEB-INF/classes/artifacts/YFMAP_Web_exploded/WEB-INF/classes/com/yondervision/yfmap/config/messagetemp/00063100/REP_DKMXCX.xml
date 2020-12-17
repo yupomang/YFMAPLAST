@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<root>
+		<head>
+			<reqflag>1</reqflag>
+			<msgtype></msgtype>
+			<tr_code>600029</tr_code>
+			<corp_no>494432304</corp_no>
+			<oreq_no></oreq_no>
+			<tr_acdt></tr_acdt>
+			<tr_time></tr_time>
+			<ans_code>[@setVariable,recode,10,0,0@]</ans_code>
+			<ans_info>交易处理成功...</ans_info>
+			<particular_code>0000</particular_code>
+			<particular_info>[@setVariable,msg,100,0,0@]</particular_info>
+			<reserved></reserved>
+		</head>
+		<body>
+			<_UPFILENAME>[@setVariable,fileName,200,0,0@]</_UPFILENAME>
+		</body>
+	</root>

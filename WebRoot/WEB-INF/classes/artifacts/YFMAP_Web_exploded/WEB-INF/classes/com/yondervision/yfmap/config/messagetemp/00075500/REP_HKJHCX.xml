@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+	<mi>
+		<head>	
+			<transCode>appapi001</transCode>
+			<sendDate>[@setVariable,sendDate,10,0,0@]</sendDate>		
+			<sendTime>[@setVariable,sendTime,10,0,0@]</sendTime>
+			<sendSeqno>[@setVariable,sendSeqno,30,0,0@]</sendSeqno>
+			<key>[@setVariable,key,8,0,0@]</key>
+			<centerSeqno>[@setVariable,centerSeqno,4,0,0@]</centerSeqno>
+			<recode>[@setVariable,recode,6,0,0@]</recode>
+			<msg>[@setVariable,msg,100,0,0@]</msg>
+		</head>
+		<body>
+			<filename>[@setVariable,filename,255,0,0@]</filename>
+			<count>[@setVariable,count,5,0,0@]</count>
+			<nextpage>[@setVariable,nextpage,10,0,0@]</nextpage>					
+			<freeuse1>[@setVariable,freeuse1,100,0,0@]</freeuse1>
+			<freeuse2>[@setVariable,freeuse2,100,0,0@]</freeuse2>
+			<freeuse3>[@setVariable,freeuse3,200,0,0@]</freeuse3>
+		</body>
+	</mi>			

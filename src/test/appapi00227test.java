@@ -34,6 +34,7 @@ public class appapi00227test {
         YbmapMessageUtil post = new YbmapMessageUtil();
         //String url = PropertiesReader.getProperty(PROPERTIES_FILE_NAME, "YBMAPURL").trim() + "appapi00227.json";
         String url = "http://172.16.10.96:11080/YBMAPZH/appapi00227.json";
+        //String url = "http://172.16.10.96:7001/YBMAPZH/appapi00227.json";
         System.out.println("YBMAP url ：" + url);
         String rm = post.post(url, map);
         System.out.println("AppApi401ServiceImpl:开始异地贷款缴存使用证明打印接口：" + rm);
@@ -46,7 +47,8 @@ public class appapi00227test {
         HashMap map = BeanUtil.transBean2Map(form);
         YbmapMessageUtil post = new YbmapMessageUtil();
         //String url = PropertiesReader.getProperty(PROPERTIES_FILE_NAME, "YBMAPURL").trim() + "webapi80010.json";
-        String url = "http://172.16.10.96:11080/YBMAPZH/webapi80010.json";
+        //String url = "http://172.16.10.96:11080/YBMAPZH/webapi80010.json";
+        String url = "http://172.16.10.96:7001/YBMAPZH/webapi80010.json";
         System.out.println("YBMAP url ：" + url);
         String rm = post.post(url, map);
         System.out.println("AppApi401ServiceImpl:开始异地贷款缴存使用证明打印接口：" + rm);

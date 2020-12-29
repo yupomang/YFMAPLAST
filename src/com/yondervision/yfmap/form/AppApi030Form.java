@@ -248,6 +248,11 @@ public class AppApi030Form extends AppApiCommonForm {
 	private String 	ahdrepayamt;//提前部分还款金额
 	private String 	conamt;//政府补贴金额
 
+	//++++++++++++++++++++++++张杰于20201218由异地缴存证明新接口调用
+	/** 业务名称 */
+	private String businName = "";
+
+	private String centername;
 	/** 统一信用代码和单位名称 */
 	private String spt_tyxyydm = "";
 	private String spt_dwmc = "";
@@ -2356,6 +2361,21 @@ public class AppApi030Form extends AppApiCommonForm {
 		this.loantimes = loantimes;
 	}
 
+	public String getBusinName() {
+		return this.businName;
+	}
+
+	public void setBusinName(String businName) {
+		this.businName = businName;
+	}
+
+	public String getCentername() {
+		return this.centername;
+	}
+
+	public void setCentername(String centername) {
+		this.centername = centername;
+	}
 
 	public String getUsebal() {
 		return usebal;

@@ -8,7 +8,7 @@ package com.yondervision.yfmap.form;
 * @date 2019-10-14
 *
 */
-public class AppApi00226Form  {
+public class AppApi00239Form {
 /*
 证件号码 ZJHM
 */
@@ -84,8 +84,148 @@ projectname 回执方中心名称*/
 	private String userId;
 
 	private String brcCode;
+	//贷款信息查询
+	private String quyu;
+
+	private String instcode;
+
+	private String zhlx;
+
+	private String xm;
+
+	private String zjlx;
+
+	private String zjhm;
+
+
+
+	private String spt_indiaccstatename;
+
+
+
+	private String lpaym;
+
+
+
+	private String spt_unitaccname;
+
+	private String bal1;
+
+	private String bal2;
+
+	private String bal3;
+
+	private String bal4;
+
+
 
 	//------------------------------------- 2020-12-22异地缴存证明字段添加完毕
+
+
+	public String getBal1() {
+		return this.bal1;
+	}
+
+	public void setBal1(String bal1) {
+		this.bal1 = bal1;
+	}
+
+	public String getBal2() {
+		return this.bal2;
+	}
+
+	public void setBal2(String bal2) {
+		this.bal2 = bal2;
+	}
+
+	public String getBal3() {
+		return this.bal3;
+	}
+
+	public void setBal3(String bal3) {
+		this.bal3 = bal3;
+	}
+
+	public String getBal4() {
+		return this.bal4;
+	}
+
+	public void setBal4(String bal4) {
+		this.bal4 = bal4;
+	}
+
+	public String getSpt_indiaccstatename() {
+		return this.spt_indiaccstatename;
+	}
+
+	public void setSpt_indiaccstatename(String spt_indiaccstatename) {
+		this.spt_indiaccstatename = spt_indiaccstatename;
+	}
+
+	public String getLpaym() {
+		return this.lpaym;
+	}
+
+	public void setLpaym(String lpaym) {
+		this.lpaym = lpaym;
+	}
+
+	public String getSpt_unitaccname() {
+		return this.spt_unitaccname;
+	}
+
+	public void setSpt_unitaccname(String spt_unitaccname) {
+		this.spt_unitaccname = spt_unitaccname;
+	}
+
+	public String getQuyu() {
+		return this.quyu;
+	}
+
+	public void setQuyu(String quyu) {
+		this.quyu = quyu;
+	}
+
+	public String getInstcode() {
+		return this.instcode;
+	}
+
+	public void setInstcode(String instcode) {
+		this.instcode = instcode;
+	}
+
+	public String getZhlx() {
+		return this.zhlx;
+	}
+
+	public void setZhlx(String zhlx) {
+		this.zhlx = zhlx;
+	}
+
+	public String getXm() {
+		return this.xm;
+	}
+
+	public void setXm(String xm) {
+		this.xm = xm;
+	}
+
+	public String getZjlx() {
+		return this.zjlx;
+	}
+
+	public void setZjlx(String zjlx) {
+		this.zjlx = zjlx;
+	}
+
+	public String getZjhm() {
+		return this.zjhm;
+	}
+
+	public void setZjhm(String zjhm) {
+		this.zjhm = zjhm;
+	}
+
 
 
 	public String getAccname() {

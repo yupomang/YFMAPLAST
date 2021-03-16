@@ -174,7 +174,7 @@ public class YbmapMessageUtil {
 			String req = "";
 			System.out.println(url);
 			int re_code = httpClient.executeMethod(mypost);//执行post请求
-			
+			System.out.println("re_code"+re_code);
 			if (re_code == 200) {
 				msg = mypost.getResponseBodyAsString();
 				System.out.println("************ 200 **********"+msg);

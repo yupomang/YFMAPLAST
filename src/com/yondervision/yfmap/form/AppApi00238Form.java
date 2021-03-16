@@ -8,7 +8,7 @@ package com.yondervision.yfmap.form;
 * @date 2019-10-14
 *
 */
-public class AppApi00226Form  {
+public class AppApi00238Form {
 /*
 证件号码 ZJHM
 */
@@ -84,9 +84,211 @@ projectname 回执方中心名称*/
 	private String userId;
 
 	private String brcCode;
+	//贷款信息查询
+	private String jkrxm;
+
+	private String txdz;
+
+	private String sfzh;
+
+	private String sjhm;
+
+	private String jkhtbh;
+
+	private String gfdz;
+
+	private String jkje;
+
+	private String jkffr;
+
+	private String jkll;
+
+	private String ydkkr;
+
+	private String kkzhhm;
+
+	private String jkzt;
+
+	private String wtyh;
+
+	private String jkqx;
+
+	private String jkdqr;
+
+	private String fkfs;
+
+	private String kkzh;
+
+	private String ljghbj;
+
+	private String sybj;
+
+	private String dqhkzt;
+
+
 
 	//------------------------------------- 2020-12-22异地缴存证明字段添加完毕
 
+
+	public String getJkrxm() {
+		return this.jkrxm;
+	}
+
+	public void setJkrxm(String jkrxm) {
+		this.jkrxm = jkrxm;
+	}
+
+	public String getTxdz() {
+		return this.txdz;
+	}
+
+	public void setTxdz(String txdz) {
+		this.txdz = txdz;
+	}
+
+	public String getSfzh() {
+		return this.sfzh;
+	}
+
+	public void setSfzh(String sfzh) {
+		this.sfzh = sfzh;
+	}
+
+	public String getSjhm() {
+		return this.sjhm;
+	}
+
+	public void setSjhm(String sjhm) {
+		this.sjhm = sjhm;
+	}
+
+	public String getJkhtbh() {
+		return this.jkhtbh;
+	}
+
+	public void setJkhtbh(String jkhtbh) {
+		this.jkhtbh = jkhtbh;
+	}
+
+	public String getGfdz() {
+		return this.gfdz;
+	}
+
+	public void setGfdz(String gfdz) {
+		this.gfdz = gfdz;
+	}
+
+	public String getJkje() {
+		return this.jkje;
+	}
+
+	public void setJkje(String jkje) {
+		this.jkje = jkje;
+	}
+
+	public String getJkffr() {
+		return this.jkffr;
+	}
+
+	public void setJkffr(String jkffr) {
+		this.jkffr = jkffr;
+	}
+
+	public String getJkll() {
+		return this.jkll;
+	}
+
+	public void setJkll(String jkll) {
+		this.jkll = jkll;
+	}
+
+	public String getYdkkr() {
+		return this.ydkkr;
+	}
+
+	public void setYdkkr(String ydkkr) {
+		this.ydkkr = ydkkr;
+	}
+
+	public String getKkzhhm() {
+		return this.kkzhhm;
+	}
+
+	public void setKkzhhm(String kkzhhm) {
+		this.kkzhhm = kkzhhm;
+	}
+
+	public String getJkzt() {
+		return this.jkzt;
+	}
+
+	public void setJkzt(String jkzt) {
+		this.jkzt = jkzt;
+	}
+
+	public String getWtyh() {
+		return this.wtyh;
+	}
+
+	public void setWtyh(String wtyh) {
+		this.wtyh = wtyh;
+	}
+
+	public String getJkqx() {
+		return this.jkqx;
+	}
+
+	public void setJkqx(String jkqx) {
+		this.jkqx = jkqx;
+	}
+
+	public String getJkdqr() {
+		return this.jkdqr;
+	}
+
+	public void setJkdqr(String jkdqr) {
+		this.jkdqr = jkdqr;
+	}
+
+	public String getFkfs() {
+		return this.fkfs;
+	}
+
+	public void setFkfs(String fkfs) {
+		this.fkfs = fkfs;
+	}
+
+	public String getKkzh() {
+		return this.kkzh;
+	}
+
+	public void setKkzh(String kkzh) {
+		this.kkzh = kkzh;
+	}
+
+	public String getLjghbj() {
+		return this.ljghbj;
+	}
+
+	public void setLjghbj(String ljghbj) {
+		this.ljghbj = ljghbj;
+	}
+
+	public String getSybj() {
+		return this.sybj;
+	}
+
+	public void setSybj(String sybj) {
+		this.sybj = sybj;
+	}
+
+	public String getDqhkzt() {
+		return this.dqhkzt;
+	}
+
+	public void setDqhkzt(String dqhkzt) {
+		this.dqhkzt = dqhkzt;
+	}
 
 	public String getAccname() {
 		return this.accname;

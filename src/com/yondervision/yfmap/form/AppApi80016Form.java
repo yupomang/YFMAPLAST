@@ -1,6 +1,6 @@
 package com.yondervision.yfmap.form;
 
-public class AppApi030Form extends AppApiCommonForm {
+public class AppApi80016Form extends AppApiCommonForm {
 	private String appramt;//审批金额
 	private String approvaldate;//批准日期
 
@@ -415,7 +415,13 @@ public class AppApi030Form extends AppApiCommonForm {
 
 	private String spt_ywid= "";
 
+	public String getSpt_ywid() {
+		return this.spt_ywid;
+	}
 
+	public void setSpt_ywid(String spt_ywid) {
+		this.spt_ywid = spt_ywid;
+	}
 
 	public String getCagorcode() {
 		return this.cagorcode;
@@ -492,8 +498,19 @@ public class AppApi030Form extends AppApiCommonForm {
 	private String transcode = "";
 	/** 类型 */			
 	private String transtype = "";
+	private String year1  = "";
 	//个人缴存证明打印04203 end
-//===================株洲新加	
+//===================株洲新加
+
+
+	public String getYear1() {
+		return this.year1;
+	}
+
+	public void setYear1(String year1) {
+		this.year1 = year1;
+	}
+
 	public String getQdapprnum() {
 		return qdapprnum;
 	}

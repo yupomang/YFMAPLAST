@@ -13,7 +13,7 @@ public class AppApi00241Form {
 证件号码 ZJHM
 */
 	private String businName;
-	private String ZJHM;
+	//private String ZJHM;
 	private String channel;
 /*
 贷款异地证明打印
@@ -157,12 +157,20 @@ projectname 回执方中心名称*/
 
 	private String dqhkzt;
 
-
+	private String spt_ywid= "";
 
 
 
 	//------------------------------------- 2020-12-22异地缴存证明字段添加完毕
 
+
+	public String getSpt_ywid() {
+		return this.spt_ywid;
+	}
+
+	public void setSpt_ywid(String spt_ywid) {
+		this.spt_ywid = spt_ywid;
+	}
 
 	public String getJkrxm() {
 		return this.jkrxm;
@@ -686,13 +694,13 @@ projectname 回执方中心名称*/
 		this.businName = businName;
 	}
 
-	public String getZJHM() {
+	/*public String getZJHM() {
 		return this.ZJHM;
-	}
+	}*/
 
-	public void setZJHM(final String ZJHM) {
+	/*public void setZJHM(final String ZJHM) {
 		this.ZJHM = ZJHM;
-	}
+	}*/
 
 
 	public String getTransdate() {

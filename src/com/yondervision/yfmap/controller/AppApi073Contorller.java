@@ -25,7 +25,7 @@ public class AppApi073Contorller {
     Logger log = Logger.getLogger("YFMAP");
 
     @RequestMapping("/appapi00341.{ext}")
-    public void appapi00341(AppApi00241Form  form, ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void appapi00341(final AppApi00241Form  form, ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
         form.setBusinName("公积金贷款信息查询打印");
         log.info(Constants.LOG_HEAD+"api/appapi00341 begin.");
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -35,8 +35,8 @@ public class AppApi073Contorller {
                 "appapi00341--form.getSjhm():" + form.getSjhm()+"appapi00341--form.getJkhtbh():" + form.getJkhtbh()+"appapi00341--form.getGfdz():" + form.getGfdz()+
                 "appapi00341--form.getJkje():" + form.getJkje()+"appapi00341--form.getJkffr():" + form.getJkffr()+"appapi00341--form.getJkll():" + form.getJkll());
 
-        HashMap map = BeanUtil.transBean2Map(form);
-        YbmapMessageUtil post = new YbmapMessageUtil();
+        final HashMap map = BeanUtil.transBean2Map(form);
+        final YbmapMessageUtil post = new YbmapMessageUtil();
         String url = PropertiesReader.getProperty(PROPERTIES_FILE_NAME, "YBMAPURL").trim() + "appapi00341.json";
         System.out.println("YBMAP url ：" + url);
         String rm = post.post(url, map);
@@ -44,10 +44,38 @@ public class AppApi073Contorller {
 
         System.out.println("rm ：" + rm);
         JSONObject json = JSONObject.fromObject(rm);
+        log.info("YF---appapi00341------  "+json.get("recode").toString());
+        if (String.valueOf(json.get("recode")).equals("000000")){
+            try {
+                //Thread.sleep(5000);
+                response.getOutputStream().write(json.toString().getBytes(request.getCharacterEncoding()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Thread t1 = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    /*try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }*/
+                    HashMap map1 = BeanUtil.transBean2Map(form);
+                    String url = PropertiesReader.getProperty(PROPERTIES_FILE_NAME, "YBMAPURL").trim() + "webapi80019.json";
+                    System.out.println("YBMAP url ：" + url);
+                    String rm = post.post(url, map1);
+                    System.out.println("AppApi401ServiceImpl:开始公积金个人账户基本信息查询打印接口：" + rm);
+                }
+            });
+
+            t1.start();
+
+        }
+
         log.info(Constants.LOG_HEAD + "appapi00341 end.");
-        log.info("gbk");
-        log.info("json.toString()==========" + json.toString());
-        response.getOutputStream().write(json.toString().getBytes(request.getCharacterEncoding()));
+        //log.info("gbk");
+        //log.info("json.toString()==========" + json.toString());
+        //response.getOutputStream().write(json.toString().getBytes(request.getCharacterEncoding()));
 
         return;
     }

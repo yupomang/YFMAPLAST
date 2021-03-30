@@ -19,3 +19,4 @@
 <qdapprnum>[@getVariable,qdapprnum,128,0,0@]</>
 <seqno>[@getVariable,seqno,128,0,0@]</>
 <transdate>[@getVariable,transdate,128,0,0@]</>
+<spt_ywid>[@getVariable,spt_ywid,128,0,0@]</>

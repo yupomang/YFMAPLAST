@@ -138,7 +138,7 @@ public class YDFilter implements Filter {
 				  request1.setCharacterEncoding("GBK");
 				  response.setCharacterEncoding("GBK");
 				  chain.doFilter(request1, response); 
-			  }else if (path.startsWith("/webapi80004")||path.startsWith("/webapi80015")||path.startsWith("/webapi80016")){
+			  }else if (path.startsWith("/webapi80004")||path.startsWith("/webapi80015")||path.startsWith("/webapi80016")||path.startsWith("/webapi80018")||path.startsWith("/webapi80019")||path.startsWith("/webapi80020")){
 				  request1.setCharacterEncoding("UTF-8");
 				  response.setCharacterEncoding("GBK");
 				  chain.doFilter(request1, response); 
